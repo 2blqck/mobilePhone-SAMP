@@ -1,5 +1,8 @@
+// File loader - textdraws
+
 #include < YSI_Coding\y_hooks >
 
+//
 hook OnPlayerConnect(playerid)
 {
 	CreateBankTD(playerid);
@@ -23,6 +26,7 @@ hook OnPlayerConnect(playerid)
 	return 1;
 }
 
+//
 #include "textdraws/bank_td.pwn"
 #include "textdraws/call_td.pwn"
 #include "textdraws/home_td.pwn"
