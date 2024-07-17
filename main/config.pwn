@@ -1,3 +1,9 @@
-#include < a_samp >
+#define CALLDIAL 		1
+#define CALLLIST 		2
+#define CALLING 		3
 
-// config file za skripte
+#define NOTES 			1
+#define NOTESLIST 		2
+
+#define HIDE 			0
+#define SHOW 			1

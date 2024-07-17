@@ -486,3 +486,75 @@ public CreateCallingTD(playerid)
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_CALLING[playerid][4], 1);
 	return 1;
 }
+
+forward ShowCallDialTD(playerid, status);
+public ShowCallDialTD(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 22; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAW_CALLDIAL[playerid][td]);
+			}
+		}
+
+		case SHOW: // shows textdraws
+		{
+			for(new td = 0; td < 22; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAW_CALLDIAL[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}
+
+forward ShowCallListTD(playerid, status);
+public ShowCallListTD(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 19; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAW_CALLLIST[playerid][td]);
+			}
+		}
+
+		case SHOW: // shows textdraws
+		{
+			for(new td = 0; td < 19; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAW_CALLLIST[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}
+
+forward ShowCallingTD(playerid, status);
+public ShowCallingTD(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 5; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAW_CALLING[playerid][td]);
+			}
+		}
+
+		case SHOW: // shows textdraws
+		{
+			for(new td = 0; td < 5; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAW_CALLING[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}

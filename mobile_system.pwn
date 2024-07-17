@@ -3,19 +3,17 @@
 #include < a_samp >
 #include < YSI_Coding\y_hooks >
 
-public OnPlayerConnect(playerid)
-{
-	return 1;
-}
-
-// Main
-#include "main/loader.pwn"
+// Main - config
+#include "main/config.pwn"
 
 // MYSQL
-#include "main/loader.pwn"
+#include "mysql/loader.pwn"
 
 // Textdraws
 #include "textdraws/loader.pwn"
 
 // Translation
+#include "translation/loader.pwn"
+
+// Main
 #include "main/loader.pwn"

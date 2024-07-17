@@ -187,4 +187,3 @@ public CreateBankTD(playerid)
 	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][18], -90.000000, 0.000000, -65.000000, 1.000000);
 	return 1;
 }
-

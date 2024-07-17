@@ -207,3 +207,51 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][8], 1);	
 	return 1;
 }
+
+forward ShowNotesTD(playerid, status);
+public ShowNotesTD(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 11; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAWS_NOTES[playerid][td]);
+			}
+		}
+
+		case SHOW: // hides textdraws
+		{
+			for(new td = 0; td < 11; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAWS_NOTES[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}
+
+forward ShowNotesListTD(playerid, status);
+public ShowNotesListTD(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 9; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAWS_NOTESLIST[playerid][td]);
+			}
+		}
+
+		case SHOW: // hides textdraws
+		{
+			for(new td = 0; td < 9; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAWS_NOTESLIST[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}
