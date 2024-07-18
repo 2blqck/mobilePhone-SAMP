@@ -118,7 +118,7 @@ public CreatePhoneTD(playerid)
 
 	TEXTDRAW_DEFAULT[playerid][12] = CreatePlayerTextDraw(playerid, 530.333190, 373.577728, "III");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_DEFAULT[playerid][12], 0.133664, 1.421627);
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][12], -47.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][12], 535.000000, 373.577728);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][12], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][12], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_DEFAULT[playerid][12], 0);
@@ -129,7 +129,7 @@ public CreatePhoneTD(playerid)
 
 	TEXTDRAW_DEFAULT[playerid][13] = CreatePlayerTextDraw(playerid, 577.867004, 375.322235, "<");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_DEFAULT[playerid][13], 0.243664, 1.222517);
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][13], -47.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][13], 585.000000, 375.322235);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][13], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][13], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_DEFAULT[playerid][13], 0);
@@ -140,7 +140,7 @@ public CreatePhoneTD(playerid)
 
 	TEXTDRAW_DEFAULT[playerid][14] = CreatePlayerTextDraw(playerid, 554.066284, 374.715148, "O");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_DEFAULT[playerid][14], 0.243664, 1.222517);
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][14], -47.000000, 0.000000);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][14], 562.000000, 374.715148);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][14], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][14], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_DEFAULT[playerid][14], 0);

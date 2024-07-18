@@ -2,8 +2,8 @@
 
 new PlayerText:TEXTDRAW_HOME[MAX_PLAYERS][12];
 
-forward CreateHomecreenTD(playerid);
-public CreateHomecreenTD(playerid)
+forward CreateHomescreenTD(playerid);
+public CreateHomescreenTD(playerid)
 {
 	TEXTDRAW_HOME[playerid][0] = CreatePlayerTextDraw(playerid, 524.632812, 260.142456, "LD_BEAt:cHIT");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_HOME[playerid][0], 23.000000, 27.000000);
