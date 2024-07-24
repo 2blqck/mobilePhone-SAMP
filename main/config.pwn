@@ -15,8 +15,21 @@
 #define CALLLIST 		2
 #define CALLING 		3
 
-#define NOTES 			1
-#define NOTESLIST 		2
+#define NOTESTD 		1
+#define NOTESLISTTD 	2
 
 #define HIDE 			0
 #define SHOW 			1
+
+#define BANK			0
+#define CALL 			1
+#define HOME 			2
+#define NOAPPS 			3
+#define NOTES 			4
+#define SMS 			5
+#define TIME 			6
+#define TWITTER			7
+
+// Variables
+
+new bool:UsingPhone[MAX_PLAYERS] = false;

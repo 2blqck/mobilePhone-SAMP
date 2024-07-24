@@ -1,15 +1,20 @@
 CMD:mobile(playerid)
 {
-	SelectTextDraw(playerid, 0x000000AA);
-	ShowPhone(playerid, SHOW);
-	ShowHome(playerid, SHOW);
-	return 1;
-}
+	if(UsingPhone[playerid] == false)
+	{
+		SelectTextDraw(playerid, 0x000000AA);
+		UseMobile(playerid, HOME, SHOW);
+		UseMobile(playerid, NOAPPS, SHOW);
 
-CMD:mobilee(playerid)
-{
-	CancelSelectTextDraw(playerid);
-	ShowPhone(playerid, HIDE);
-	ShowHome(playerid, HIDE);
+		UsingPhone[playerid] = true;
+	} 
+	else
+	{
+		CancelSelectTextDraw(playerid);
+		HidePhone(playerid);
+		ShowPhone(playerid, HIDE);
+
+		UsingPhone[playerid] = false;
+	}
 	return 1;
 }

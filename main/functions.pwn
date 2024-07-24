@@ -92,9 +92,9 @@ public ShowNotes(playerid, type, status)
 {
 	switch(type)
 	{
-		case NOTES:
+		case NOTESTD:
 			ShowNotesTD(playerid, status);
-		case NOTESLIST:
+		case NOTESLISTTD:
 			ShowNotesListTD(playerid, status);
 		default: 
 			return 0;
@@ -169,6 +169,71 @@ public ShowTwitter(playerid, status)
 			{
 				PlayerTextDrawShow(playerid, TEXTDRAWS_TWITTER[playerid][td]);
 			}
+		}
+	}
+	return 1;
+}
+
+forward HidePhone(playerid);
+public HidePhone(playerid)
+{
+	ShowBank(playerid, HIDE);
+	ShowCall(playerid, CALLLIST, HIDE);
+	ShowCall(playerid, CALLING, HIDE);
+	ShowCall(playerid, CALLDIAL, HIDE);
+	ShowHome(playerid, HIDE);
+	ShowNotes(playerid, NOTESTD, HIDE);
+	ShowNotes(playerid, NOTESLISTTD, HIDE);
+	ShowSMS(playerid, HIDE);
+	ShowTime(playerid, HIDE);
+	ShowTwitter(playerid, HIDE);
+
+	return 1;
+}
+
+UseMobile(playerid, type, status, additional = 0)
+{
+	switch(type)
+	{
+		case BANK:
+		{
+			if(status == 0) ShowBank(playerid, HIDE);
+			else ShowBank(playerid, SHOW);
+		}
+		case CALL:
+		{
+			if(status == 0) ShowCall(playerid, additional, HIDE);
+			else ShowCall(playerid, additional, SHOW);
+		}
+		case HOME:
+		{
+			if(status == 0) ShowHome(playerid, HIDE);
+			else ShowHome(playerid, SHOW);
+		}
+		case NOAPPS:
+		{
+			if(status == 0) ShowPhone(playerid, HIDE);
+			else ShowPhone(playerid, SHOW);
+		}
+		case NOTES:
+		{
+			if(status == 0) ShowNotes(playerid, additional, HIDE);
+			else ShowNotes(playerid, additional, SHOW);
+		}
+		case SMS:
+		{
+			if(status == 0) ShowSMS(playerid, HIDE);
+			else ShowSMS(playerid, SHOW);
+		}
+		case TIME:
+		{
+			if(status == 0) ShowTime(playerid, HIDE);
+			else ShowTime(playerid, SHOW);
+		}
+		case TWITTER:
+		{
+			if(status == 0) ShowTwitter(playerid, HIDE);
+			else ShowTwitter(playerid, SHOW);
 		}
 	}
 	return 1;
