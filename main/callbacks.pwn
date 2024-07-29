@@ -66,7 +66,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         CancelSelectTextDraw(playerid);
         SendClientMessage(playerid, -1, "III");
 
-        UsingPhone[playerid] = false;
+        usingPhone[playerid] = false;
     }
     if(playertextid == TEXTDRAW_DEFAULT[playerid][13]) 
     {
@@ -83,6 +83,32 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         UseMobile(playerid, HOME, SHOW);
         UseMobile(playerid, NOAPPS, SHOW);
         SendClientMessage(playerid, -1, "O");
+    }
+    return 1;
+}
+
+forward OnPlayerEnterShop(playerid, code);
+public OnPlayerEnterShop(playerid, code)
+{
+    switch(code)
+    {
+        case BUYING:
+        {
+
+        }
+
+        case EXITING:
+        {
+
+        }
+
+        case SELLING:
+        {
+
+        }
+
+        default:
+            return 0;
     }
     return 1;
 }

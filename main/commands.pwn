@@ -1,12 +1,14 @@
 CMD:mobile(playerid)
 {
-	if(UsingPhone[playerid] == false)
+	if(hasPhone[playerid] == false) return 0;
+
+	if(usingPhone[playerid] == false)
 	{
 		SelectTextDraw(playerid, 0x000000AA);
 		UseMobile(playerid, HOME, SHOW);
 		UseMobile(playerid, NOAPPS, SHOW);
 
-		UsingPhone[playerid] = true;
+		usingPhone[playerid] = true;
 	} 
 	else
 	{
@@ -14,7 +16,16 @@ CMD:mobile(playerid)
 		HidePhone(playerid);
 		ShowPhone(playerid, HIDE);
 
-		UsingPhone[playerid] = false;
+		usingPhone[playerid] = false;
 	}
+	return 1;
+}
+
+CMD:market(playerid)
+{
+	if(hasPhone[playerid] == true) return 0;
+	
+	if(!IsPlayerNearMarket(playerid)) return 0;
+	SendClientMessage(playerid, -1, "Market!");
 	return 1;
 }

@@ -30,6 +30,20 @@
 #define TIME 			6
 #define TWITTER			7
 
+#define BUYING			1
+#define EXITING 		2
+#define SELLING 		3
+// #define HACKING			4 // ? MYB
+
 // Variables
 
-new bool:UsingPhone[MAX_PLAYERS] = false;
+new bool:usingPhone[MAX_PLAYERS] = false,
+	bool:hasPhone[MAX_PLAYERS] = false; // MYSQL CUVANJE
+
+
+new Float:marketCoordinates[3][3] =
+{
+	{1.0, 2.0, 3.0},
+	{1.0, 2.0, 3.0},
+	{3.0, 2.0, 1.0}
+};

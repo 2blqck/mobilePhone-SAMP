@@ -236,5 +236,14 @@ UseMobile(playerid, type, status, additional = 0)
 			else ShowTwitter(playerid, SHOW);
 		}
 	}
-	return 1;
 }
+
+IsPlayerNearMarket(playerid, status = 0)
+{
+	for(new ID = 0; ID < sizeof(marketCoordinates); ID++) 
+	{
+		if(IsPlayerInRangeOfPoint(playerid, 3.0, marketCoordinates[ID][0], marketCoordinates[ID][1], marketCoordinates[ID][2])) status = 1;
+	}
+	return status;
+}
+
