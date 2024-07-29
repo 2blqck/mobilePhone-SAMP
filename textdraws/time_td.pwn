@@ -41,7 +41,7 @@ public CreateTimeTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_TIME[playerid][3], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_TIME[playerid][3], 0);
 
-	TEXTDRAWS_TIME[playerid][4] = CreatePlayerTextDraw(playerid, 557.867065, 357.170379, "trenutno_gledate_aplikaciju: vrijeme");
+	TEXTDRAWS_TIME[playerid][4] = CreatePlayerTextDraw(playerid, 557.867065, 357.170379, "trenutno_gledate_aplikaciju:~n~vrijeme");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TIME[playerid][4], 0.093000, 0.525628);
 	PlayerTextDrawTextSize(playerid, TEXTDRAWS_TIME[playerid][4], 0.000000, 10.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TIME[playerid][4], 2);

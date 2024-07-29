@@ -131,6 +131,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][13], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][13], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][13], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][13], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][13], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][13], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][13], 19445);
@@ -141,6 +142,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][14], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][14], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][14], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][14], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][14], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][14], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][14], 19445);
@@ -151,6 +153,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][15], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][15], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][15], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][15], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][15], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][15], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][15], 19445);
@@ -161,6 +164,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][16], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][16], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][16], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][16], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][16], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][16], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][16], 19445);
@@ -171,6 +175,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][17], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][17], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][17], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][17], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][17], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][17], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][17], 19445);
@@ -181,6 +186,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][18], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][18], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][18], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][18], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][18], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][18], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][18], 19445);

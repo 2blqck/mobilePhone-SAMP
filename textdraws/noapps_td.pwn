@@ -5,7 +5,7 @@ new PlayerText:TEXTDRAW_DEFAULT[MAX_PLAYERS][19];
 forward CreatePhoneTD(playerid);
 public CreatePhoneTD(playerid)
 {
-	TEXTDRAW_DEFAULT[playerid][0] = CreatePlayerTextDraw(playerid, 513.666625, 208.925918, "ld_grav:sky");
+	TEXTDRAW_DEFAULT[playerid][0] = CreatePlayerTextDraw(playerid, 513.666625, 208.925918, "ld_dual:backgnd");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][0], 90.000000, 90.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][0], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][0], -1);
@@ -14,7 +14,7 @@ public CreatePhoneTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_DEFAULT[playerid][0], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_DEFAULT[playerid][0], 0);
 
-	TEXTDRAW_DEFAULT[playerid][1] = CreatePlayerTextDraw(playerid, 513.666809, 298.870361, "ld_grav:sky");
+	TEXTDRAW_DEFAULT[playerid][1] = CreatePlayerTextDraw(playerid, 513.666809, 298.870361, "ld_dual:backgnd");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][1], 90.000000, 90.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][1], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][1], -1);

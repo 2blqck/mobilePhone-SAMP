@@ -23,5 +23,3 @@
 
 // Main
 #include "main/loader.pwn"
-
-//fixat tdove - crni bg, text u 1 liniji ....

@@ -333,6 +333,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][9] = CreatePlayerTextDraw(playerid, 567.666625, 375.007385, "->");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][9], 0.180665, -1.473777);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][9], 567.666625+8, 375.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][9], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][9], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][9], 0);
@@ -343,6 +344,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][10] = CreatePlayerTextDraw(playerid, 529.199768, 233.040756, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][10], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][10], 529+52, 233.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][10], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][10], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][10], 0);
@@ -353,6 +355,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][11] = CreatePlayerTextDraw(playerid, 528.866455, 246.926818, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][11], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][11], 528.666625+52, 246.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][11], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][11], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][11], 0);
@@ -363,6 +366,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][12] = CreatePlayerTextDraw(playerid, 528.866455, 262.127746, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][12], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][12], 528.666625+52, 262.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][12], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][12], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][12], 0);
@@ -373,6 +377,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][13] = CreatePlayerTextDraw(playerid, 528.866455, 277.128662, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][13], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][13], 528.666625+52, 277.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][13], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][13], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][13], 0);
@@ -383,6 +388,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][14] = CreatePlayerTextDraw(playerid, 528.866455, 292.129577, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][14], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][14], 528.666625+52, 292.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][14], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][14], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][14], 0);
@@ -393,6 +399,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][15] = CreatePlayerTextDraw(playerid, 528.866455, 306.930480, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][15], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][15], 528.666625+52, 306.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][15], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][15], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][15], 0);
@@ -403,6 +410,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][16] = CreatePlayerTextDraw(playerid, 528.866455, 321.531372, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][16], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][16], 528.666625+52, 321.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][16], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][16], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][16], 0);
@@ -413,6 +421,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][17] = CreatePlayerTextDraw(playerid, 528.866455, 336.532287, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][17], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][17], 528.666625+52, 336.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][17], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][17], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][17], 0);
@@ -423,6 +432,7 @@ public CreateCallListTD(playerid)
 
 	TEXTDRAW_CALLLIST[playerid][18] = CreatePlayerTextDraw(playerid, 528.866455, 351.233184, "ime_prezime");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLLIST[playerid][18], 0.136665, 0.641776);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_CALLLIST[playerid][18], 528.666625+52, 351.007385);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLLIST[playerid][18], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLLIST[playerid][18], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_CALLLIST[playerid][18], 0);
@@ -466,7 +476,7 @@ public CreateCallingTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_CALLING[playerid][2], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_CALLING[playerid][2], 1);
 
-	TEXTDRAW_CALLING[playerid][3] = CreatePlayerTextDraw(playerid, 558.766479, 307.392517, "da_vrsite_razgovor pisite_vase_poruke u_chat");
+	TEXTDRAW_CALLING[playerid][3] = CreatePlayerTextDraw(playerid, 558.766479, 307.392517, "da_vrsite_razgovor~n~pisite_vase_poruke~n~u_chat");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_CALLING[playerid][3], 0.126000, 0.757924);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_CALLING[playerid][3], 2);
 	PlayerTextDrawColor(playerid, TEXTDRAW_CALLING[playerid][3], -1);

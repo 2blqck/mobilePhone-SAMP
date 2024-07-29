@@ -52,7 +52,6 @@ public CreateTwitterTD(playerid)
 
 	TEXTDRAWS_TWITTER[playerid][4] = CreatePlayerTextDraw(playerid, 568.000061, 351.362915, "box");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TWITTER[playerid][4], 0.000000, 1.233332);
-	PlayerTextDrawTextSize(playerid, TEXTDRAWS_TWITTER[playerid][4], 597.000000, 0.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TWITTER[playerid][4], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAWS_TWITTER[playerid][4], -1);
 	PlayerTextDrawUseBox(playerid, TEXTDRAWS_TWITTER[playerid][4], 1);
@@ -72,7 +71,7 @@ public CreateTwitterTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_TWITTER[playerid][5], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_TWITTER[playerid][5], 1);
 
-	TEXTDRAWS_TWITTER[playerid][6] = CreatePlayerTextDraw(playerid, 519.466613, 344.907714, "poslije_stiskanja dugmeta_tweet, pisite_vasu poruku_u_chat");
+	TEXTDRAWS_TWITTER[playerid][6] = CreatePlayerTextDraw(playerid, 519.466613, 344.907714, "poslije_stiskanja~n~dugmeta_tweet,~n~pisite_vasu~n~poruku_u_chat");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TWITTER[playerid][6], 0.101666, 0.571259);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TWITTER[playerid][6], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAWS_TWITTER[playerid][6], -1);
@@ -108,7 +107,7 @@ public CreateTwitterTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_TWITTER[playerid][9], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_TWITTER[playerid][9], 0);
 
-	TEXTDRAWS_TWITTER[playerid][10] = CreatePlayerTextDraw(playerid, 534.133422, 244.725967, "proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta");
+	TEXTDRAWS_TWITTER[playerid][10] = CreatePlayerTextDraw(playerid, 534.133422, 244.725967, "proba_za_duzinu_texta~n~proba_za_duzinu_texta~n~proba_za_duzinu_texta~n~proba_za_duzinu_texta");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TWITTER[playerid][10], 0.122998, 0.625185);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TWITTER[playerid][10], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAWS_TWITTER[playerid][10], -1);
@@ -117,7 +116,7 @@ public CreateTwitterTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_TWITTER[playerid][10], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_TWITTER[playerid][10], 1);
 
-	TEXTDRAWS_TWITTER[playerid][11] = CreatePlayerTextDraw(playerid, 534.133422, 277.427947, "proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta");
+	TEXTDRAWS_TWITTER[playerid][11] = CreatePlayerTextDraw(playerid, 534.133422, 277.427947, "proba_za_duzinu_texta~n~proba_za_duzinu_texta~n~proba_za_duzinu_texta~n~proba_za_duzinu_texta");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TWITTER[playerid][11], 0.122998, 0.625185);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TWITTER[playerid][11], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAWS_TWITTER[playerid][11], -1);
@@ -126,7 +125,7 @@ public CreateTwitterTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_TWITTER[playerid][11], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_TWITTER[playerid][11], 1);
 
-	TEXTDRAWS_TWITTER[playerid][12] = CreatePlayerTextDraw(playerid, 534.133422, 310.429962, "proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta proba_za_duzinu_texta");
+	TEXTDRAWS_TWITTER[playerid][12] = CreatePlayerTextDraw(playerid, 534.133422, 310.429962, "proba_za_duzinu_texta~n~roba_za_duzinu_texta~n~proba_za_duzinu_texta~n~proba_za_duzinu_texta");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_TWITTER[playerid][12], 0.122998, 0.625185);
 	PlayerTextDrawAlignment(playerid, TEXTDRAWS_TWITTER[playerid][12], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAWS_TWITTER[playerid][12], -1);
