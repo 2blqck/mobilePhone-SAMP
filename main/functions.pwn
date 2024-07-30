@@ -191,6 +191,47 @@ public HidePhone(playerid)
 	return 1;
 }
 
+forward CreateShop();
+public CreateShop()
+{
+	for(new ID = 0; ID < sizeof(marketCoordinates); ID++) 
+	{
+		marketPickupID[ID] = CreatePickup(1239, 1, marketCoordinates[ID][0], marketCoordinates[ID][1], marketCoordinates[ID][2], -1);
+		Create3DTextLabel(""SHOP" "SHOP_INFO"", 0x33CCFFAA, marketCoordinates[ID][0], marketCoordinates[ID][1], marketCoordinates[ID][2], 25, 0, 1);
+	}
+
+	printf(""SHOP" | "CONSOLE_SHOP"", sizeof(marketCoordinates));
+	return 1;
+}
+
+forward OnPlayerEnterShop(playerid, code);
+public OnPlayerEnterShop(playerid, code)
+{
+    switch(code)
+    {
+        case BUYING:
+        {
+            ShowPlayerDialog(playerid, MARKET_DIALOG, DIALOG_STYLE_LIST, ""SHOP"", ""MOBILE"", ""BUY"", ""CANCEL"");
+        }
+
+        case EXITING:
+        {
+            SendClientMessage(playerid, -1, ""DIALOG_CLOSED"");
+        }
+
+        case SELLING:
+        {
+
+        }
+
+        default:
+            return 0;
+    }
+    return 1;
+}
+
+//
+
 UseMobile(playerid, type, status, additional = 0)
 {
 	switch(type)

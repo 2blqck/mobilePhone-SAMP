@@ -35,15 +35,17 @@
 #define SELLING 		3
 // #define HACKING			4 // ? MYB
 
+#define MARKET_DIALOG 16261
+
 // Variables
-
-new bool:usingPhone[MAX_PLAYERS] = false,
-	bool:hasPhone[MAX_PLAYERS] = false; // MYSQL CUVANJE
-
-
 new Float:marketCoordinates[3][3] =
 {
-	{1.0, 2.0, 3.0},
-	{1.0, 2.0, 3.0},
-	{3.0, 2.0, 1.0}
+	{2284.8750, -1326.1179, 25.5},
+	{1152.3308, -1657.2321, 14.5},
+	{1340.5618, -1318.0380, 14.0}
 };
+
+new bool:usingPhone[MAX_PLAYERS] = false,
+	bool:hasPhone[MAX_PLAYERS] = false,
+	marketPickupID[sizeof(marketCoordinates)]; // MYSQL CUVANJE
+

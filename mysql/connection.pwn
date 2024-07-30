@@ -1,3 +1,5 @@
+#include < YSI_Coding\y_hooks >
+
 new MySQL:db_handle;
 
 hook OnFilterScriptInit()
@@ -6,17 +8,17 @@ hook OnFilterScriptInit()
 	db_handle = mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS, MYSQL_DB);
 	if(mysql_errno(db_handle) != 0) 
     { 
-        printf("** [MySQL] "NO_CONNECTION" (%d).", mysql_errno(db_handle));
+        printf("MySQL | "NO_CONNECTION" (%d).", mysql_errno(db_handle));
         SendRconCommand("exit");
     } 
     else 
     { 
-        printf("** [MySQL] "CONNECTED" (%d).", _:db_handle);
+        printf("MySQL | "CONNECTED" (%d).", _:db_handle);
     } 
 	return 1;
 }
 
-public OnFilterScriptExit() 
+hook OnFilterScriptExit() 
 {
     if(db_handle) 
     { 

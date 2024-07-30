@@ -21,11 +21,30 @@ CMD:mobile(playerid)
 	return 1;
 }
 
-CMD:market(playerid)
+alias:mobile("mobitel")
+
+CMD:shop(playerid)
 {
 	if(hasPhone[playerid] == true) return 0;
 	
 	if(!IsPlayerNearMarket(playerid)) return 0;
-	SendClientMessage(playerid, -1, "Market!");
+	OnPlayerEnterShop(playerid, BUYING);
 	return 1;
+}
+
+alias:shop("market")
+
+//
+new test_id=0;
+CMD:test(playerid)
+{
+	switch(test_id)
+    {
+    	case 0:
+    		SetPlayerPos(playerid, 2284.8750, -1326.1179, 24.6223+5), test_id++;
+    	case 1:
+    		SetPlayerPos(playerid, 1152.3308, -1657.2321, 13.9058+5), test_id++;
+    	default:
+    		SetPlayerPos(playerid, 1340.5618, -1318.0380, 14.0+5), test_id = 0;
+    }
 }

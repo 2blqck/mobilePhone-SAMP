@@ -1,3 +1,11 @@
+#include < YSI_Coding\y_hooks >
+
+hook OnFilterScriptInit()
+{
+    CreateShop();
+    return 1;
+}
+
 hook OnPlayerConnect(playerid)
 {
     CreatePhoneTD(playerid);
@@ -87,28 +95,25 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     return 1;
 }
 
-forward OnPlayerEnterShop(playerid, code);
-public OnPlayerEnterShop(playerid, code)
+public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 {
-    switch(code)
+    switch(dialogid)
     {
-        case BUYING:
+        case MARKET_DIALOG:
         {
-
+            if(response)
+            {
+                switch(listitem)
+                {
+                    default:
+                    {
+                        hasPhone[playerid] = true;
+                        SendClientMessage(playerid, -1, ""SUCCESS"");
+                    }
+                }
+            }
+            else OnPlayerEnterShop(playerid, EXITING);
         }
-
-        case EXITING:
-        {
-
-        }
-
-        case SELLING:
-        {
-
-        }
-
-        default:
-            return 0;
     }
     return 1;
 }

@@ -4,7 +4,6 @@
 
 #include < a_samp >
 #include < a_mysql >
-#include < YSI_Coding\y_hooks >
 
 #define FILTERSCRIPT
 #include < Pawn.CMD >
