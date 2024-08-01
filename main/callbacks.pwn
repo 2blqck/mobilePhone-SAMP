@@ -13,8 +13,10 @@
 
 hook OnFilterScriptInit()
 {
+	#if DEBUG == 1
 	printf(""MOBILE" | "COUNT"", tdCount);
-    
+    #endif
+
     CreateShop();
     return 1;
 }
@@ -86,7 +88,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         HidePhone(playerid);
         CancelSelectTextDraw(playerid);
         SendClientMessage(playerid, -1, "III");
-
+        UseMobile(playerid, NOAPPS, HIDE);
         usingPhone[playerid] = false;
     }
     if(playertextid == TEXTDRAW_DEFAULT[playerid][13]) 

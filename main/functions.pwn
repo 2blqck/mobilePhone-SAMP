@@ -211,7 +211,9 @@ public CreateShop()
 		Create3DTextLabel(""SHOP" "SHOP_INFO"", 0x33CCFFAA, marketCoordinates[ID][0], marketCoordinates[ID][1], marketCoordinates[ID][2], 25, 0, 1);
 	}
 
+	#if DEBUG == 1
 	printf(""SHOP" | "CONSOLE_SHOP"", sizeof(marketCoordinates));
+	#endif
 	return 1;
 }
 

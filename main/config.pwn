@@ -22,6 +22,11 @@
 
 //
 
+#define DEBUG 			1 // 1 ON | 0 OFF
+#define SELECTION_COLOR 0xE3E3E3AA
+
+//
+
 #define CALLDIAL 		1
 #define CALLLIST 		2
 #define CALLING 		3
@@ -70,8 +75,10 @@ new bool:usingPhone[MAX_PLAYERS] = false,
 	PlayerText:TEXTDRAWS_NOTESLIST[MAX_PLAYERS][16],
 	PlayerText:TEXTDRAWS_SMS[MAX_PLAYERS][3],
 	PlayerText:TEXTDRAWS_TIME[MAX_PLAYERS][5],
-	PlayerText:TEXTDRAWS_TWITTER[MAX_PLAYERS][16],
-	tdCount = sizeof(TEXTDRAW_BANK[]) + sizeof(TEXTDRAW_CALLDIAL[]) + sizeof(TEXTDRAW_CALLLIST[]) + sizeof(TEXTDRAW_CALLING[]) 
+	PlayerText:TEXTDRAWS_TWITTER[MAX_PLAYERS][16];
+
+#if DEBUG == 1
+new tdCount = sizeof(TEXTDRAW_BANK[]) + sizeof(TEXTDRAW_CALLDIAL[]) + sizeof(TEXTDRAW_CALLLIST[]) + sizeof(TEXTDRAW_CALLING[]) 
 			+ sizeof(TEXTDRAW_HOME[]) + sizeof(TEXTDRAW_DEFAULT[]) + sizeof(TEXTDRAWS_NOTES[]) + sizeof(TEXTDRAWS_NOTESLIST[]) 
 			+ sizeof(TEXTDRAWS_SMS[]) + sizeof(TEXTDRAWS_TIME[]) + sizeof(TEXTDRAWS_TWITTER[]);
-
+#endif

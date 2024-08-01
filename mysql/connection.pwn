@@ -23,8 +23,10 @@ hook OnFilterScriptInit()
         SendRconCommand("exit");
     } 
     else 
-    { 
+    {
+    	#if DEBUG == 1 
         printf("MySQL | "CONNECTED" (%d).", _:db_handle);
+        #endif
     } 
 	return 1;
 }
