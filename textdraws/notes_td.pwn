@@ -9,11 +9,6 @@
                textdraws/notes_td.pwn
 */
 
-// Notes Textdraws
-
-new PlayerText:TEXTDRAWS_NOTES[MAX_PLAYERS][11],
-	PlayerText:TEXTDRAWS_NOTESLIST[MAX_PLAYERS][9];
-
 forward CreateNotesTD(playerid);
 public CreateNotesTD(playerid)
 {
@@ -133,7 +128,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][0], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][0], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][0], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][0], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][1] = CreatePlayerTextDraw(playerid, 520.002000, 246.374450+6, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][1], 0.204333, 0.766222);
@@ -144,7 +138,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][1], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][1], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][1], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][1], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][2] = CreatePlayerTextDraw(playerid, 520.003000, 256.774780+9, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][2], 0.204333, 0.766222);
@@ -155,7 +148,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][2], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][2], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][2], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][2], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][3] = CreatePlayerTextDraw(playerid, 520.004000, 266+12, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][3], 0.204333, 0.766222);
@@ -166,7 +158,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][3], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][3], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][3], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][3], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][4] = CreatePlayerTextDraw(playerid, 520.005000, 276+15, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][4], 0.204333, 0.766222);
@@ -177,7 +168,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][4], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][4], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][4], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][4], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][5] = CreatePlayerTextDraw(playerid, 520.006000, 286+18, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][5], 0.204333, 0.766222);
@@ -188,7 +178,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][5], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][5], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][5], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][5], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][6] = CreatePlayerTextDraw(playerid, 520.007000, 296+21, "biljesk_ime1");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][6], 0.204333, 0.766222);
@@ -199,7 +188,6 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][6], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][6], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][6], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][6], true);
 
 	TEXTDRAWS_NOTESLIST[playerid][7] = CreatePlayerTextDraw(playerid, 532.999938, 344.725982, "box");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAWS_NOTESLIST[playerid][7], 0.000000, 1.833333);
@@ -221,6 +209,76 @@ public CreateNotesListTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][8], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][8], 1);
 	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][8], true);	
+
+	TEXTDRAWS_NOTESLIST[playerid][9] = CreatePlayerTextDraw(playerid, 579.999877, 239.322235, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][9], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][9], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][9], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][10] = CreatePlayerTextDraw(playerid, 579.999877, 252.123016, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][10], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][10], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][10], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][11] = CreatePlayerTextDraw(playerid, 579.999877, 264.423767, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][11], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][11], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][11], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][12] = CreatePlayerTextDraw(playerid, 579.999877, 278.124603, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][12], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][12], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][12], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][13] = CreatePlayerTextDraw(playerid, 579.999877, 291.225402, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][13], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][13], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][13], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][14] = CreatePlayerTextDraw(playerid, 579.999877, 303.926177, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][14], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][14], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][14], true);
+
+	TEXTDRAWS_NOTESLIST[playerid][15] = CreatePlayerTextDraw(playerid, 579.999877, 317.427001, "ld_chat:thumbup");
+	PlayerTextDrawTextSize(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 6.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAWS_NOTESLIST[playerid][15], -1);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAWS_NOTESLIST[playerid][15], 0);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAWS_NOTESLIST[playerid][15], true);	
 	return 1;
 }
 
@@ -255,7 +313,7 @@ public ShowNotesListTD(playerid, status)
 	{
 		case HIDE: // hides textdraws
 		{
-			for(new td = 0; td < 9; td++)
+			for(new td = 0; td < 16; td++)
 			{
 				PlayerTextDrawHide(playerid, TEXTDRAWS_NOTESLIST[playerid][td]);
 			}
@@ -263,7 +321,7 @@ public ShowNotesListTD(playerid, status)
 
 		case SHOW: // hides textdraws
 		{
-			for(new td = 0; td < 9; td++)
+			for(new td = 0; td < 16; td++)
 			{
 				PlayerTextDrawShow(playerid, TEXTDRAWS_NOTESLIST[playerid][td]);
 			}

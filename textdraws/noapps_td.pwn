@@ -9,10 +9,6 @@
                textdraws/noapps_td.pwn
 */
 
-// Blank mobile phone Textdraws
-
-new PlayerText:TEXTDRAW_DEFAULT[MAX_PLAYERS][19];
-
 forward CreatePhoneTD(playerid);
 public CreatePhoneTD(playerid)
 {

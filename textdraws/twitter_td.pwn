@@ -8,11 +8,7 @@
 
                textdraws/twitter_td.pwn
 */
-
-// Twitter Textdraws
-
-new PlayerText:TEXTDRAWS_TWITTER[MAX_PLAYERS][16];
-
+               
 forward CreateTwitterTD(playerid);
 public CreateTwitterTD(playerid)
 {

@@ -9,10 +9,6 @@
                textdraws/home_td.pwn
 */
 
-// Homescreen Textdraws
-
-new PlayerText:TEXTDRAW_HOME[MAX_PLAYERS][12];
-
 forward CreateHomescreenTD(playerid);
 public CreateHomescreenTD(playerid)
 {

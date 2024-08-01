@@ -58,5 +58,20 @@ new Float:marketCoordinates[3][3] =
 
 new bool:usingPhone[MAX_PLAYERS] = false,
 	bool:hasPhone[MAX_PLAYERS] = false,
-	marketPickupID[sizeof(marketCoordinates)]; // MYSQL CUVANJE
+	marketPickupID[sizeof(marketCoordinates)], // MYSQL CUVANJE
+
+	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19],
+	PlayerText:TEXTDRAW_CALLDIAL[MAX_PLAYERS][22],
+	PlayerText:TEXTDRAW_CALLLIST[MAX_PLAYERS][29],
+	PlayerText:TEXTDRAW_CALLING[MAX_PLAYERS][5],
+	PlayerText:TEXTDRAW_HOME[MAX_PLAYERS][12],
+	PlayerText:TEXTDRAW_DEFAULT[MAX_PLAYERS][19],
+	PlayerText:TEXTDRAWS_NOTES[MAX_PLAYERS][11],
+	PlayerText:TEXTDRAWS_NOTESLIST[MAX_PLAYERS][16],
+	PlayerText:TEXTDRAWS_SMS[MAX_PLAYERS][3],
+	PlayerText:TEXTDRAWS_TIME[MAX_PLAYERS][5],
+	PlayerText:TEXTDRAWS_TWITTER[MAX_PLAYERS][16],
+	tdCount = sizeof(TEXTDRAW_BANK[]) + sizeof(TEXTDRAW_CALLDIAL[]) + sizeof(TEXTDRAW_CALLLIST[]) + sizeof(TEXTDRAW_CALLING[]) 
+			+ sizeof(TEXTDRAW_HOME[]) + sizeof(TEXTDRAW_DEFAULT[]) + sizeof(TEXTDRAWS_NOTES[]) + sizeof(TEXTDRAWS_NOTESLIST[]) 
+			+ sizeof(TEXTDRAWS_SMS[]) + sizeof(TEXTDRAWS_TIME[]) + sizeof(TEXTDRAWS_TWITTER[]);
 

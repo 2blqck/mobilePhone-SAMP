@@ -15,7 +15,7 @@ CMD:mobile(playerid)
 
 	if(usingPhone[playerid] == false)
 	{
-		SelectTextDraw(playerid, 0x000000AA);
+		SelectTextDraw(playerid, 0xFF22AAAA);
 		UseMobile(playerid, HOME, SHOW);
 		UseMobile(playerid, NOAPPS, SHOW);
 

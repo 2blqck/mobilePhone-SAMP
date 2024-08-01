@@ -9,9 +9,6 @@
                textdraws/bank_td.pwn
 */
 
-// Bank Textdraws
-new PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19];
-
 forward CreateBankTD(playerid);
 public CreateBankTD(playerid)
 {

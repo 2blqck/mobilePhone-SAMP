@@ -9,10 +9,6 @@
                textdraws/sms_td.pwn
 */
 
-// SMS Textdraws
-
-new PlayerText:TEXTDRAWS_SMS[MAX_PLAYERS][3];
-
 forward CreateSMSTD(playerid);
 public CreateSMSTD(playerid)
 {

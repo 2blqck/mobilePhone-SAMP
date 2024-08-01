@@ -13,6 +13,8 @@
 
 hook OnFilterScriptInit()
 {
+	printf(""MOBILE" | "COUNT"", tdCount);
+    
     CreateShop();
     return 1;
 }

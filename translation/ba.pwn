@@ -22,3 +22,4 @@
 #define BUY "Kupi"
 #define CANCEL "Odustani"
 #define SUCCESS "Kupili ste telefon, otvarate ga komandom /mobitel"
+#define COUNT "Ukupan broj Mobile System TextDraw-ova: %d"

@@ -9,10 +9,6 @@
                textdraws/time_td.pwn
 */
 
-// Time Textdraws
-
-new PlayerText:TEXTDRAWS_TIME[MAX_PLAYERS][5];
-
 forward CreateTimeTD(playerid);
 public CreateTimeTD(playerid)
 {
