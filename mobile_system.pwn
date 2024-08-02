@@ -12,12 +12,16 @@
 /* 
 Requirements:
 	https://github.com/YSI-Coding/y_hooks
+	https://github.com/YSI-Coding/y_timers
 	https://github.com/pBlueG/SA-MP-MySQL
 	https://github.com/katursis/Pawn.CMD
 */
 
 #include < a_samp >
 #include < a_mysql >
+
+#include < YSI_Coding\y_hooks >
+#include < YSI_Coding\y_timers >
 
 #define FILTERSCRIPT
 #include < Pawn.CMD >

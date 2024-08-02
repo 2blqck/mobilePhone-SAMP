@@ -6,11 +6,10 @@
    \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
                                 /_/             
 
-               main/loader.pwn
+               main/timers.pwn
 */
 
-#include "main/timers.pwn"
-#include "main/functions.pwn"
-#include "main/callbacks.pwn"
-#include "main/notifications.pwn"
-#include "main/commands.pwn"
+timer HideNotification[2000](playerid) 
+{
+    for(new i = 0; i < 4; i++) PlayerTextDrawHide(playerid, TEXTDRAW_NOTIFICATION[playerid][i]);
+}

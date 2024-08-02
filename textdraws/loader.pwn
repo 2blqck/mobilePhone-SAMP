@@ -12,6 +12,7 @@
 #include "textdraws/noapps_td.pwn"
 #include "textdraws/home_td.pwn"
 #include "textdraws/notes_td.pwn"
+#include "textdraws/notification_td.pwn"
 #include "textdraws/bank_td.pwn"
 #include "textdraws/call_td.pwn"
 #include "textdraws/sms_td.pwn"

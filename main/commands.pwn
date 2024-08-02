@@ -59,3 +59,15 @@ CMD:test(playerid)
     		SetPlayerPos(playerid, 1340.5618, -1318.0380, 14.0+5), test_id = 0;
     }
 }
+
+CMD:notif(playerid)
+{
+	SendPlayerNotification(playerid, -1, UNAVAILABLE);
+	return 1;
+}
+
+CMD:notiff(playerid)
+{
+	SendPlayerNotification(playerid, -1, SMS_RECEIVED);
+	return 1;
+}

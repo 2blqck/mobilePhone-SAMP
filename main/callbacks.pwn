@@ -9,9 +9,7 @@
                main/callbacks.pwn
 */
 
-#include < YSI_Coding\y_hooks >
-
-hook OnFilterScriptInit()
+public OnFilterScriptInit()
 {
 	#if DEBUG == 1
 	printf(""MOBILE" | "COUNT"", tdCount);
@@ -21,26 +19,9 @@ hook OnFilterScriptInit()
     return 1;
 }
 
-hook OnPlayerConnect(playerid)
+hook OnPlayerSpawn(playerid)
 {
-    CreatePhoneTD(playerid);
-    //
-    CreateBankTD(playerid);
-    //
-    CreateCallDialTD(playerid);
-    CreateCallListTD(playerid);
-    CreateCallingTD(playerid);
-    //
-    CreateHomescreenTD(playerid);
-    //
-    CreateNotesTD(playerid);
-    CreateNotesListTD(playerid);
-    //
-    CreateSMSTD(playerid);
-    //
-    CreateTimeTD(playerid);
-    //
-    CreateTwitterTD(playerid);
+	if(hasPhone[playerid] == true) CreateTextDraws(playerid);
     return 1;
 }
 
@@ -124,6 +105,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                     {
                         hasPhone[playerid] = true;
                         SendClientMessage(playerid, -1, ""SUCCESS"");
+                        CreateTextDraws(playerid);
                     }
                 }
             }

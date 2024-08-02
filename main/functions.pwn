@@ -39,7 +39,7 @@ public ShowBank(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 19; td++)
 			{
@@ -63,7 +63,7 @@ public ShowHome(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 12; td++)
 			{
@@ -87,7 +87,7 @@ public ShowPhone(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 19; td++)
 			{
@@ -126,7 +126,7 @@ public ShowSMS(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 3; td++)
 			{
@@ -150,7 +150,7 @@ public ShowTime(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 5; td++)
 			{
@@ -174,11 +174,35 @@ public ShowTwitter(playerid, status)
 			}
 		}
 
-		case SHOW: // hides textdraws
+		case SHOW: // shows textdraws
 		{
 			for(new td = 0; td < 16; td++)
 			{
 				PlayerTextDrawShow(playerid, TEXTDRAWS_TWITTER[playerid][td]);
+			}
+		}
+	}
+	return 1;
+}
+
+forward ShowNotification(playerid, status);
+public ShowNotification(playerid, status)
+{
+	switch(status)
+	{
+		case HIDE: // hides textdraws
+		{
+			for(new td = 0; td < 4; td++)
+			{
+				PlayerTextDrawHide(playerid, TEXTDRAW_NOTIFICATION[playerid][td]);
+			}
+		}
+
+		case SHOW: // shows textdraws
+		{
+			for(new td = 0; td < 4; td++)
+			{
+				PlayerTextDrawShow(playerid, TEXTDRAW_NOTIFICATION[playerid][td]);
 			}
 		}
 	}
@@ -199,6 +223,32 @@ public HidePhone(playerid)
 	ShowTime(playerid, HIDE);
 	ShowTwitter(playerid, HIDE);
 
+	return 1;
+}
+
+forward CreateTextDraws(playerid);
+public CreateTextDraws(playerid)
+{
+	CreatePhoneTD(playerid);
+    //
+    CreateBankTD(playerid);
+    //
+    CreateCallDialTD(playerid);
+    CreateCallListTD(playerid);
+    CreateCallingTD(playerid);
+    //
+    CreateHomescreenTD(playerid);
+    //
+    CreateNotesTD(playerid);
+    CreateNotesListTD(playerid);
+    //
+    CreateSMSTD(playerid);
+    //
+    CreateTimeTD(playerid);
+    //
+    CreateTwitterTD(playerid);
+    //
+    CreateNotificationTD(playerid);
 	return 1;
 }
 
@@ -241,6 +291,64 @@ public OnPlayerEnterShop(playerid, code)
             return 0;
     }
     return 1;
+}
+
+forward SendPlayerNotification(playerid, receiverid, type);
+public SendPlayerNotification(playerid, receiverid, type)
+{
+	switch(type)
+	{
+		case BANK_PAYMENT:
+		{
+
+		}
+
+		case CALL_RECEIVED:
+		{
+
+		}
+
+		case UNAVAILABLE:
+		{
+			CreateNotification(playerid, "Igrac je trenutno zauzet", "Pokusajte kasnije", -1);
+		}
+
+		case SMS_RECEIVED:
+		{
+			new string[64];
+			format(string, 64, "Igrac %s je zauzet.", GetName(playerid));
+			CreateNotification(playerid, string, "Pokusajte kasnije", -1);
+		}
+
+		case NEW_TWEET:
+		{
+
+		}
+
+		case PHONE_CREDIT:
+		{
+
+		}
+
+		case READY_TO_USE:
+		{
+
+		}
+	}
+	return 1;
+}
+
+forward CreateNotification(playerid, lineone[], linetwo[], receiverid);
+public CreateNotification(playerid, lineone[], linetwo[], receiverid)
+{
+	new string[80];
+	format(string, sizeof(string), "%s~n~%s", lineone, linetwo);
+	PlayerTextDrawSetString(playerid, TEXTDRAW_NOTIFICATION[playerid][3], string);
+	
+	for(new i = 0; i < 4; i++) PlayerTextDrawShow(playerid, TEXTDRAW_NOTIFICATION[playerid][i]);
+
+	defer HideNotification(playerid);
+	return 1;
 }
 
 //
@@ -301,3 +409,9 @@ IsPlayerNearMarket(playerid, status = 0)
 	return status;
 }
 
+GetName(playerid)
+{
+	new PlayerName[MAX_PLAYER_NAME]; 
+	GetPlayerName(playerid, PlayerName, sizeof(PlayerName));
+	return PlayerName;
+}
