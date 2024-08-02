@@ -12,5 +12,4 @@
 #include "main/timers.pwn"
 #include "main/functions.pwn"
 #include "main/callbacks.pwn"
-#include "main/notifications.pwn"
 #include "main/commands.pwn"

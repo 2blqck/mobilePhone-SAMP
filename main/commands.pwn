@@ -46,6 +46,7 @@ CMD:shop(playerid)
 alias:shop("market")
 
 //
+#if DEBUG == 1
 new test_id=0;
 CMD:test(playerid)
 {
@@ -71,3 +72,4 @@ CMD:notiff(playerid)
 	SendPlayerNotification(playerid, -1, SMS_RECEIVED);
 	return 1;
 }
+#endif
