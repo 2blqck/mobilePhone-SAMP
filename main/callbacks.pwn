@@ -89,8 +89,6 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         UseMobile(playerid, HOME, SHOW);
         UseMobile(playerid, NOAPPS, SHOW);
         SendClientMessage(playerid, -1, "<");
-
-        // Napraviti ukoliko je u CALLING, CALLLIST, NOTESLIST, etc. da vrati za 1, ukoliko nije da vrati u home, i ako je u home da ugasi telefon
     }
     if(playertextid == TEXTDRAW_DEFAULT[playerid][14]) 
     {

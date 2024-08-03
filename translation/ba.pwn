@@ -37,3 +37,4 @@
 #define FORCE_BUY "Morate ga kupiti u marketu."
 #define HAS_PHONE_TEXT "Vi vec imate telefon."
 #define MARKET_ERROR "Vi niste u marketu."
+#define EMPTY_NAME "Prazno"

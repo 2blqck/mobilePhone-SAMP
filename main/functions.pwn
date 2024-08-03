@@ -280,11 +280,6 @@ public OnPlayerEnterShop(playerid, code)
             SendClientMessage(playerid, -1, ""DIALOG_CLOSED"");
         }
 
-        case SELLING:
-        {
-
-        }
-
         default:
             return 0;
     }
@@ -365,6 +360,22 @@ public CreateNotification(playerid, lineone[], linetwo[], receiverid)
 	defer HideNotification(playerid);
 	return 1;
 }
+
+forward RestartNotesList(playerid);
+public RestartNotesList(playerid)
+{
+	for(new i = 0; i < 7; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_NOTESLIST[playerid][i], EMPTY_NAME);
+	return 1;
+}
+
+forward RestartCallList(playerid);
+public RestartCallList(playerid)
+{
+	for(new i = 10; i < 19; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_CALLLIST[playerid][i], EMPTY_NAME);
+	return 1;
+}
+
+//
 
 forward SQLLoadUser(playerid);
 public SQLLoadUser(playerid)

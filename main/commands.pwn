@@ -63,13 +63,7 @@ CMD:test(playerid)
 
 CMD:notif(playerid)
 {
-	SendPlayerNotification(playerid, -1, UNAVAILABLE);
-	return 1;
-}
-
-CMD:notiff(playerid)
-{
-	SendPlayerNotification(playerid, playerid, SMS_RECEIVED);
+	RestartNotesList(playerid); RestartCallList(playerid);
 	return 1;
 }
 #endif

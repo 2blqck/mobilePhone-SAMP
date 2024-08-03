@@ -13,6 +13,8 @@
 	#include "translation/ba.pwn"
 #elseif LANG == 2
 	#include "translation/en.pwn"
+#elseif LANG == 3
+	#include "translation/de.pwn"
 #else
 	#include "translation/en.pwn"
 #endif

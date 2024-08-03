@@ -18,7 +18,7 @@
 
 // Translation
 
-#define LANG 			1 // ba - 1 | en - 2
+#define LANG 			1 // ba - 1 | en - 2 | de - 3
 
 //
 
@@ -48,8 +48,6 @@
 
 #define BUYING			1
 #define EXITING 		2
-#define SELLING 		3
-// #define HACKING			4 // ? MYB
 
 #define MARKET_DIALOG 16261
 
