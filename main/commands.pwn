@@ -11,15 +11,15 @@
 
 CMD:mobile(playerid)
 {
-	if(hasPhone[playerid] == false) return SendPlayerNotification(playerid, -1, NO_PHONE);
+	if(hasPhone[playerid] == 0) return SendPlayerNotification(playerid, -1, NO_PHONE);
 
-	if(usingPhone[playerid] == false)
+	if(usingPhone[playerid] == 0)
 	{
 		SelectTextDraw(playerid, SELECTION_COLOR);
 		UseMobile(playerid, HOME, SHOW);
 		UseMobile(playerid, NOAPPS, SHOW);
 
-		usingPhone[playerid] = true;
+		usingPhone[playerid] = 1;
 	} 
 	else
 	{
@@ -27,7 +27,7 @@ CMD:mobile(playerid)
 		HidePhone(playerid);
 		ShowPhone(playerid, HIDE);
 
-		usingPhone[playerid] = false;
+		usingPhone[playerid] = 0;
 	}
 	return 1;
 }
@@ -36,7 +36,7 @@ alias:mobile("mobitel")
 
 CMD:shop(playerid)
 {
-	if(hasPhone[playerid] == true) return SendPlayerNotification(playerid, -1, HAS_PHONE);
+	if(hasPhone[playerid] == 1) return SendPlayerNotification(playerid, -1, HAS_PHONE);
 	
 	if(!IsPlayerNearMarket(playerid)) return SendPlayerNotification(playerid, -1, NOT_IN_MARKET);
 	OnPlayerEnterShop(playerid, BUYING);

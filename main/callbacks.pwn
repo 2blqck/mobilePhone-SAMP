@@ -19,9 +19,18 @@ public OnFilterScriptInit()
     return 1;
 }
 
+public OnPlayerConnect(playerid)
+{
+    new foo[80];
+    mysql_format(db_handle, foo, sizeof(foo), "SELECT `HasPhone` FROM `users` WHERE `Username` = '%s'", GetName(playerid));
+    mysql_tquery(db_handle, foo, "SQLLoadUser", "d", playerid);
+
+	return 1;
+}
+
 hook OnPlayerSpawn(playerid)
 {
-	if(hasPhone[playerid] == true) CreateTextDraws(playerid);
+	if(hasPhone[playerid] == 1) CreateTextDraws(playerid);
 
 	CreateNotificationTD(playerid);
     return 1;
@@ -109,6 +118,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                         SendClientMessage(playerid, -1, ""SUCCESS"");
                         SendPlayerNotification(playerid, -1, READY_TO_USE);
                         CreateTextDraws(playerid);
+
+                        new foo[128];
+				        mysql_format(db_handle, foo, sizeof(foo), "INSERT INTO `users` (`Username`, `HasPhone`) VALUES ('%s', %d)", GetName(playerid), hasPhone[playerid]);
+				        mysql_tquery(db_handle, foo);
                     }
                 }
             }

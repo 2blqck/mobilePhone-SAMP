@@ -73,9 +73,9 @@ new Float:marketCoordinates[3][3] =
 	{1340.5618, -1318.0380, 14.0}
 };
 
-new bool:usingPhone[MAX_PLAYERS] = false,
-	bool:hasPhone[MAX_PLAYERS] = false,
-	marketPickupID[sizeof(marketCoordinates)], // MYSQL CUVANJE
+new usingPhone[MAX_PLAYERS] = 0,
+	hasPhone[MAX_PLAYERS] = 0,
+	marketPickupID[sizeof(marketCoordinates)],
 
 	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19],
 	PlayerText:TEXTDRAW_CALLDIAL[MAX_PLAYERS][22],

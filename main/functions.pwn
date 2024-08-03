@@ -366,6 +366,18 @@ public CreateNotification(playerid, lineone[], linetwo[], receiverid)
 	return 1;
 }
 
+forward SQLLoadUser(playerid);
+public SQLLoadUser(playerid)
+{
+	new rows = cache_num_rows();
+
+	if(rows)
+	{
+		cache_get_value_name_int(0, "HasPhone", hasPhone[playerid]);
+	}
+	return 1;
+}
+
 //
 
 UseMobile(playerid, type, status, additional = 0)
