@@ -11,7 +11,7 @@
 
 CMD:mobile(playerid)
 {
-	if(hasPhone[playerid] == false) return 0;
+	if(hasPhone[playerid] == false) return SendPlayerNotification(playerid, -1, NO_PHONE);
 
 	if(usingPhone[playerid] == false)
 	{
@@ -36,9 +36,9 @@ alias:mobile("mobitel")
 
 CMD:shop(playerid)
 {
-	if(hasPhone[playerid] == true) return 0;
+	if(hasPhone[playerid] == true) return SendPlayerNotification(playerid, -1, HAS_PHONE);
 	
-	if(!IsPlayerNearMarket(playerid)) return 0;
+	if(!IsPlayerNearMarket(playerid)) return SendPlayerNotification(playerid, -1, NOT_IN_MARKET);
 	OnPlayerEnterShop(playerid, BUYING);
 	return 1;
 }
@@ -69,7 +69,7 @@ CMD:notif(playerid)
 
 CMD:notiff(playerid)
 {
-	SendPlayerNotification(playerid, -1, SMS_RECEIVED);
+	SendPlayerNotification(playerid, playerid, SMS_RECEIVED);
 	return 1;
 }
 #endif

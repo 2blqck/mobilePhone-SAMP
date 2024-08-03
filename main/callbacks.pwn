@@ -22,6 +22,8 @@ public OnFilterScriptInit()
 hook OnPlayerSpawn(playerid)
 {
 	if(hasPhone[playerid] == true) CreateTextDraws(playerid);
+
+	CreateNotificationTD(playerid);
     return 1;
 }
 
@@ -105,6 +107,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                     {
                         hasPhone[playerid] = true;
                         SendClientMessage(playerid, -1, ""SUCCESS"");
+                        SendPlayerNotification(playerid, -1, READY_TO_USE);
                         CreateTextDraws(playerid);
                     }
                 }

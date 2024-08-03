@@ -122,7 +122,7 @@ public ShowSMS(playerid, status)
 		{
 			for(new td = 0; td < 3; td++)
 			{
-				PlayerTextDrawHide(playerid, TEXTDRAWS_SMS[playerid][td]);
+				PlayerTextDrawHide(playerid, TEXTDRAW_SMS[playerid][td]);
 			}
 		}
 
@@ -130,7 +130,7 @@ public ShowSMS(playerid, status)
 		{
 			for(new td = 0; td < 3; td++)
 			{
-				PlayerTextDrawShow(playerid, TEXTDRAWS_SMS[playerid][td]);
+				PlayerTextDrawShow(playerid, TEXTDRAW_SMS[playerid][td]);
 			}
 		}
 	}
@@ -146,7 +146,7 @@ public ShowTime(playerid, status)
 		{
 			for(new td = 0; td < 5; td++)
 			{
-				PlayerTextDrawHide(playerid, TEXTDRAWS_TIME[playerid][td]);
+				PlayerTextDrawHide(playerid, TEXTDRAW_TIME[playerid][td]);
 			}
 		}
 
@@ -154,7 +154,7 @@ public ShowTime(playerid, status)
 		{
 			for(new td = 0; td < 5; td++)
 			{
-				PlayerTextDrawShow(playerid, TEXTDRAWS_TIME[playerid][td]);
+				PlayerTextDrawShow(playerid, TEXTDRAW_TIME[playerid][td]);
 			}
 		}
 	}
@@ -170,7 +170,7 @@ public ShowTwitter(playerid, status)
 		{
 			for(new td = 0; td < 16; td++)
 			{
-				PlayerTextDrawHide(playerid, TEXTDRAWS_TWITTER[playerid][td]);
+				PlayerTextDrawHide(playerid, TEXTDRAW_TWITTER[playerid][td]);
 			}
 		}
 
@@ -178,7 +178,7 @@ public ShowTwitter(playerid, status)
 		{
 			for(new td = 0; td < 16; td++)
 			{
-				PlayerTextDrawShow(playerid, TEXTDRAWS_TWITTER[playerid][td]);
+				PlayerTextDrawShow(playerid, TEXTDRAW_TWITTER[playerid][td]);
 			}
 		}
 	}
@@ -247,8 +247,6 @@ public CreateTextDraws(playerid)
     CreateTimeTD(playerid);
     //
     CreateTwitterTD(playerid);
-    //
-    CreateNotificationTD(playerid);
 	return 1;
 }
 
@@ -300,39 +298,56 @@ public SendPlayerNotification(playerid, receiverid, type)
 	{
 		case BANK_PAYMENT:
 		{
-
+			CreateNotification(playerid, PAYMENT_RECEIVED, CHECK_PHONE, -1);
 		}
 
 		case CALL_RECEIVED:
 		{
-
+			new string[64];
+			format(string, 64, CALL_NOTIFICATION, GetName(receiverid));
+			CreateNotification(playerid, string, CHECK_PHONE, receiverid);
 		}
 
 		case UNAVAILABLE:
 		{
-			CreateNotification(playerid, "Igrac je trenutno zauzet", "Pokusajte kasnije", -1);
+			CreateNotification(playerid, UNAVAILABLE_TEXT, TRY_AGAIN, -1);
 		}
 
 		case SMS_RECEIVED:
 		{
 			new string[64];
-			format(string, 64, "Igrac %s je zauzet.", GetName(playerid));
-			CreateNotification(playerid, string, "Pokusajte kasnije", -1);
+			format(string, 64, SMS_TEXT_RECEIVED, GetName(receiverid));
+			CreateNotification(playerid, string, CHECK_PHONE, receiverid);
 		}
 
 		case NEW_TWEET:
 		{
-
+			CreateNotification(playerid, TWEET_NOTIFICATION, CHECK_PHONE, -1);
 		}
 
 		case PHONE_CREDIT:
 		{
-
+			CreateNotification(playerid, CREDIT_RECEIVED, CHECK_PHONE, -1);
 		}
 
 		case READY_TO_USE:
 		{
+			CreateNotification(playerid, PHONE_READY, PHONE_COMMAND, -1);
+		}
 
+		case NO_PHONE:
+		{
+			CreateNotification(playerid, ERROR_PHONE, FORCE_BUY, -1);
+		}
+
+		case HAS_PHONE:
+		{
+			CreateNotification(playerid, HAS_PHONE_TEXT, PHONE_COMMAND, -1);
+		}
+
+		case NOT_IN_MARKET:
+		{
+			CreateNotification(playerid, MARKET_ERROR, TRY_AGAIN, -1);
 		}
 	}
 	return 1;
