@@ -74,8 +74,8 @@ public ShowHome(playerid, status)
 	return 1;
 }
 
-forward ShowPhone(playerid, status);
-public ShowPhone(playerid, status)
+forward ShowNoApps(playerid, status);
+public ShowNoApps(playerid, status)
 {
 	switch(status)
 	{
@@ -222,7 +222,7 @@ public HidePhone(playerid)
 	ShowSMS(playerid, HIDE);
 	ShowTime(playerid, HIDE);
 	ShowTwitter(playerid, HIDE);
-
+	UpdateTimeDate(playerid, 2);
 	return 1;
 }
 
@@ -361,17 +361,38 @@ public CreateNotification(playerid, lineone[], linetwo[], receiverid)
 	return 1;
 }
 
-forward RestartNotesList(playerid);
-public RestartNotesList(playerid)
+forward UpdateTimeDate(playerid, type);
+public UpdateTimeDate(playerid, type)
 {
-	for(new i = 0; i < 7; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_NOTESLIST[playerid][i], EMPTY_NAME);
-	return 1;
-}
+	switch(type)
+	{
+		case 1:
+		{
+			new Year, Month, Day;
+			getdate(Year, Month, Day);
 
-forward RestartCallList(playerid);
-public RestartCallList(playerid)
-{
-	for(new i = 10; i < 19; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_CALLLIST[playerid][i], EMPTY_NAME);
+			new string[12];
+			format(string, sizeof(string), "%02d/%02d/%d", Day, Month, Year);
+			PlayerTextDrawSetString(playerid, TEXTDRAW_TIME[playerid][1], string);
+
+			//
+
+			new Hour, Minute, Second;
+			gettime(Hour, Minute, Second);
+
+			format(string, sizeof(string), "%02d:%02d:%02d", Hour, Minute, Second);
+			PlayerTextDrawSetString(playerid, TEXTDRAW_TIME[playerid][2], string);
+		}
+		case 2:
+		{
+			new Hour, Minute;
+			gettime(Hour, Minute);
+
+			new string[10];
+			format(string, sizeof(string), "%02d:%02d", Hour, Minute);
+			PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][15], string);
+		}
+	}
 	return 1;
 }
 
@@ -414,8 +435,8 @@ UseMobile(playerid, type, status, additional = 0)
 		}
 		case NOAPPS:
 		{
-			if(status == 0) ShowPhone(playerid, HIDE);
-			else ShowPhone(playerid, SHOW);
+			if(status == 0) ShowNoApps(playerid, HIDE);
+			else ShowNoApps(playerid, SHOW);
 		}
 		case NOTES:
 		{
@@ -430,7 +451,7 @@ UseMobile(playerid, type, status, additional = 0)
 		case TIME:
 		{
 			if(status == 0) ShowTime(playerid, HIDE);
-			else ShowTime(playerid, SHOW);
+			else ShowTime(playerid, SHOW), UpdateTimeDate(playerid, 1);
 		}
 		case TWITTER:
 		{
@@ -454,4 +475,16 @@ GetName(playerid)
 	new PlayerName[MAX_PLAYER_NAME]; 
 	GetPlayerName(playerid, PlayerName, sizeof(PlayerName));
 	return PlayerName;
+}
+
+RestartNotesList(playerid)
+{
+	for(new i = 0; i < 7; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_NOTESLIST[playerid][i], EMPTY_NAME);
+	return 1;
+}
+
+RestartCallList(playerid)
+{
+	for(new i = 10; i < 19; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_CALLLIST[playerid][i], EMPTY_NAME);
+	return 1;
 }

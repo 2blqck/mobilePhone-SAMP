@@ -18,6 +18,7 @@ CMD:mobile(playerid)
 		SelectTextDraw(playerid, SELECTION_COLOR);
 		UseMobile(playerid, HOME, SHOW);
 		UseMobile(playerid, NOAPPS, SHOW);
+		UpdateTimeDate(playerid, 2);
 
 		usingPhone[playerid] = 1;
 	} 
@@ -25,7 +26,7 @@ CMD:mobile(playerid)
 	{
 		CancelSelectTextDraw(playerid);
 		HidePhone(playerid);
-		ShowPhone(playerid, HIDE);
+		ShowNoApps(playerid, HIDE);
 
 		usingPhone[playerid] = 0;
 	}
