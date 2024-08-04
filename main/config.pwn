@@ -73,6 +73,9 @@ new Float:marketCoordinates[3][3] =
 
 new usingPhone[MAX_PLAYERS] = 0,
 	hasPhone[MAX_PLAYERS] = 0,
+	playerNumber[MAX_PLAYERS] = 0,
+	playerCredit[MAX_PLAYERS] = 0,
+	playerOccupied[MAX_PLAYERS] = 0, // KADA JE U CALLU / SMS
 	marketPickupID[sizeof(marketCoordinates)],
 
 	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19],

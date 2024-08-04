@@ -272,7 +272,7 @@ public OnPlayerEnterShop(playerid, code)
     {
         case BUYING:
         {
-            ShowPlayerDialog(playerid, MARKET_DIALOG, DIALOG_STYLE_LIST, ""SHOP"", ""MOBILE"", ""BUY"", ""CANCEL"");
+            ShowPlayerDialog(playerid, MARKET_DIALOG, DIALOG_STYLE_LIST, SHOP, ""MOBILE"\n$10 "CREDIT"\n$20 "CREDIT"\n$50 "CREDIT"\n$100 "CREDIT"", BUY, CANCEL);
         }
 
         case EXITING:
@@ -385,6 +385,8 @@ public SQLLoadUser(playerid)
 	if(rows)
 	{
 		cache_get_value_name_int(0, "HasPhone", hasPhone[playerid]);
+		cache_get_value_name_int(0, "Number", playerNumber[playerid]);
+		cache_get_value_name_int(0, "Credit", playerCredit[playerid]);
 	}
 	return 1;
 }

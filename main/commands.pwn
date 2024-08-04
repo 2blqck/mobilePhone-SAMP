@@ -36,8 +36,6 @@ alias:mobile("mobitel")
 
 CMD:shop(playerid)
 {
-	if(hasPhone[playerid] == 1) return SendPlayerNotification(playerid, -1, HAS_PHONE);
-	
 	if(!IsPlayerNearMarket(playerid)) return SendPlayerNotification(playerid, -1, NOT_IN_MARKET);
 	OnPlayerEnterShop(playerid, BUYING);
 	return 1;
@@ -64,6 +62,8 @@ CMD:test(playerid)
 CMD:notif(playerid)
 {
 	RestartNotesList(playerid); RestartCallList(playerid);
+
+	playerOccupied[playerid] = 1;
 	return 1;
 }
 #endif

@@ -22,7 +22,7 @@ public OnFilterScriptInit()
 public OnPlayerConnect(playerid)
 {
     new foo[80];
-    mysql_format(db_handle, foo, sizeof(foo), "SELECT `HasPhone` FROM `users` WHERE `Username` = '%s'", GetName(playerid));
+    mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
     mysql_tquery(db_handle, foo, "SQLLoadUser", "d", playerid);
 
 	return 1;
@@ -110,16 +110,51 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             {
                 switch(listitem)
                 {
-                    default:
+                    case 0:
                     {
-                        hasPhone[playerid] = true;
+                    	if(hasPhone[playerid] == 1) return SendPlayerNotification(playerid, -1, HAS_PHONE);
+
+                    	playerNumber[playerid] = 100000 + random(899000);
+                    	playerCredit[playerid] = 100;
+                        hasPhone[playerid] = 1;
+
                         SendClientMessage(playerid, -1, ""SUCCESS"");
                         SendPlayerNotification(playerid, -1, READY_TO_USE);
                         CreateTextDraws(playerid);
 
                         new foo[128];
-				        mysql_format(db_handle, foo, sizeof(foo), "INSERT INTO `users` (`Username`, `HasPhone`) VALUES ('%s', %d)", GetName(playerid), hasPhone[playerid]);
+				        mysql_format(db_handle, foo, sizeof(foo), 
+				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`) VALUES ('%s', %d, %d, %d)", 
+				        			GetName(playerid), hasPhone[playerid], playerNumber[playerid], playerCredit[playerid]);
 				        mysql_tquery(db_handle, foo);
+                    }
+
+                    case 1, 2, 3, 4:
+                    {
+
+                    	if(hasPhone[playerid] == 0) return SendPlayerNotification(playerid, -1, NO_PHONE);
+                    	if(playerCredit[playerid] > 999999) return SendClientMessage(playerid, -1, CREDIT_MAX);
+
+                    	switch(listitem)
+                    	{
+                    		case 1:
+                    			playerCredit[playerid] += 10;
+                    		case 2:
+                    			playerCredit[playerid] += 20;
+                    		case 3:
+                    			playerCredit[playerid] += 50;
+                    		case 4:
+                    			playerCredit[playerid] += 100;
+                    	}
+
+                    	new foo[80];
+				        mysql_format(db_handle, foo, sizeof(foo), 
+				        			"UPDATE `users` SET `Credit` = %d WHERE `Username` = '%s'", 
+				        			playerCredit[playerid], GetName(playerid));
+				        mysql_tquery(db_handle, foo);
+
+				        format(foo, sizeof(foo), CREDIT_MARKET, playerCredit[playerid]);
+				        SendClientMessage(playerid, -1, foo);
                     }
                 }
             }
@@ -127,4 +162,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
         }
     }
     return 1;
+}
+
+public OnPlayerText(playerid, text[])
+{
+	if(playerOccupied[playerid] == 1)
+	{
+		if(strfind(text, "sms_exit", true) != -1) SendClientMessage(playerid, -1, "Test"); // zavrsetak sms		
+	}
+	return 1;
 }
