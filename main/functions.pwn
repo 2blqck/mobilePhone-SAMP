@@ -180,6 +180,10 @@ public ShowTwitter(playerid, status)
 			{
 				PlayerTextDrawShow(playerid, TEXTDRAW_TWITTER[playerid][td]);
 			}
+			
+			new foo[160];
+		    mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `twitter`");
+		    mysql_tquery(db_handle, foo, "SQLLoadTwitter", "d", playerid);
 		}
 	}
 	return 1;
@@ -412,6 +416,24 @@ public SQLLoadUser(playerid)
 	return 1;
 }
 
+forward SQLLoadTwitter(playerid);
+public SQLLoadTwitter(playerid)
+{
+	new rows = cache_num_rows(), string[92], tweet = 1;
+
+	if(rows)
+	{
+		for(new i = 0; i < rows; i++) 
+		{ 
+            cache_get_value_name_int(i, "TweetID", tweet);
+            cache_get_value_name(i, "TweetString", string);
+        	
+            PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweet], string);
+        }
+	}
+	return 1;
+}
+
 //
 
 UseMobile(playerid, type, status, additional = 0)
@@ -486,5 +508,11 @@ RestartNotesList(playerid)
 RestartCallList(playerid)
 {
 	for(new i = 10; i < 19; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_CALLLIST[playerid][i], EMPTY_NAME);
+	return 1;
+}
+
+RestartTwitter(playerid)
+{
+	for(new i = 10; i < 13; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][i], EMPTY_NAME);
 	return 1;
 }

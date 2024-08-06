@@ -59,6 +59,7 @@ public CreateTwitterTD(playerid)
 
 	TEXTDRAW_TWITTER[playerid][4] = CreatePlayerTextDraw(playerid, 568.000061, 351.362915, "box");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_TWITTER[playerid][4], 0.000000, 1.233332);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_TWITTER[playerid][4], 597.000000, 0.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_TWITTER[playerid][4], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_TWITTER[playerid][4], -1);
 	PlayerTextDrawUseBox(playerid, TEXTDRAW_TWITTER[playerid][4], 1);
@@ -67,16 +68,17 @@ public CreateTwitterTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_TWITTER[playerid][4], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_TWITTER[playerid][4], 1);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_TWITTER[playerid][4], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_TWITTER[playerid][4], true);
 
-	TEXTDRAW_TWITTER[playerid][5] = CreatePlayerTextDraw(playerid, 572.133056, 353.492767, "tweet");
+	TEXTDRAW_TWITTER[playerid][5] = CreatePlayerTextDraw(playerid, 582.133056, 353.492767, "tweet");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_TWITTER[playerid][5], 0.147332, 0.650074);
-	PlayerTextDrawAlignment(playerid, TEXTDRAW_TWITTER[playerid][5], 1);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_TWITTER[playerid][5], 5, 353.492767);
+	PlayerTextDrawAlignment(playerid, TEXTDRAW_TWITTER[playerid][5], 2);
 	PlayerTextDrawColor(playerid, TEXTDRAW_TWITTER[playerid][5], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_TWITTER[playerid][5], 0);
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_TWITTER[playerid][5], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_TWITTER[playerid][5], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_TWITTER[playerid][5], 1);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_TWITTER[playerid][5], true);
 
 	TEXTDRAW_TWITTER[playerid][6] = CreatePlayerTextDraw(playerid, 519.466613, 344.907714, "poslije_stiskanja~n~dugmeta_tweet,~n~pisite_vasu~n~poruku_u_chat");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_TWITTER[playerid][6], 0.101666, 0.571259);

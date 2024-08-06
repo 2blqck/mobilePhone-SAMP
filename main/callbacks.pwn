@@ -170,5 +170,32 @@ public OnPlayerText(playerid, text[])
 	{
 		if(strfind(text, "sms_exit", true) != -1) SendClientMessage(playerid, -1, "Test"); // zavrsetak sms		
 	}
+
+
+	// twitter
+
+	// provjera da li je u tweet modu, koju se daje kada stisne tweet textdraw
+	for(new i = 0; i < strlen(text); i++)
+	{
+		if(text[i] == ' ')
+		text[i] = '_' ;
+	}
+
+	new string[92];
+	format(string, 92, "%s", text);
+
+	if(strlen(string) > 21) strins(string, "~n~", 21, 92);
+	if(strlen(string) > 45) strins(string, "~n~", 45, 92);
+	if(strlen(string) > 68) strins(string, "~n~", 68, 92);
+
+	new foo[160];
+    mysql_format(db_handle, foo, sizeof(foo), 
+    			"INSERT INTO `twitter` (`TweetID`, `TweetString`) VALUES (%d, '%s')", 
+    			tweetID, string);
+    mysql_tquery(db_handle, foo);
+
+    if(tweetID > 3) tweetID = 1;
+    else tweetID++;
+	PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);
 	return 1;
 }

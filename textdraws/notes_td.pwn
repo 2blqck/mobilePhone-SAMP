@@ -86,6 +86,7 @@ public CreateNotesTD(playerid)
 
 	TEXTDRAW_NOTES[playerid][8] = CreatePlayerTextDraw(playerid, 537.000000, 344.311126, "box");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_NOTES[playerid][8], 0.000000, 1.299998);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_NOTES[playerid][8], 577.000000, 0.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_NOTES[playerid][8], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_NOTES[playerid][8], -1);
 	PlayerTextDrawUseBox(playerid, TEXTDRAW_NOTES[playerid][8], 1);
@@ -94,16 +95,17 @@ public CreateNotesTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_NOTES[playerid][8], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_NOTES[playerid][8], 1);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_NOTES[playerid][8], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_NOTES[playerid][8], true);
 
 	TEXTDRAW_NOTES[playerid][9] = CreatePlayerTextDraw(playerid, 540.966613, 344.496246, "dodaj");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_NOTES[playerid][9], 0.241666, 0.898962);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_NOTES[playerid][9], 547.966613, 344.496246);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_NOTES[playerid][9], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_NOTES[playerid][9], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_NOTES[playerid][9], 0);
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_NOTES[playerid][9], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_NOTES[playerid][9], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_NOTES[playerid][9], 1);
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_NOTES[playerid][9], true);
 
 	TEXTDRAW_NOTES[playerid][10] = CreatePlayerTextDraw(playerid, 557.366882, 320.627258, "kada_zavrsite_sa_biljeskom~n~u_chat_upisite~n~'biljeska_end'");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_NOTES[playerid][10], 0.112999, 0.625185);
@@ -191,6 +193,7 @@ public CreateNotesListTD(playerid)
 
 	TEXTDRAW_NOTESLIST[playerid][7] = CreatePlayerTextDraw(playerid, 532.999938, 344.725982, "box");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_NOTESLIST[playerid][7], 0.000000, 1.833333);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_NOTESLIST[playerid][7], 583.000000, 0.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_NOTESLIST[playerid][7], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_NOTESLIST[playerid][7], -1);
 	PlayerTextDrawUseBox(playerid, TEXTDRAW_NOTESLIST[playerid][7], 1);
@@ -202,13 +205,14 @@ public CreateNotesListTD(playerid)
 
 	TEXTDRAW_NOTESLIST[playerid][8] = CreatePlayerTextDraw(playerid, 557.966491, 350.033264, "dodaj_biljesku");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_NOTESLIST[playerid][8], 0.146332, 0.658370);
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_NOTESLIST[playerid][8], 15, 350.033264);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_NOTESLIST[playerid][8], 2);
 	PlayerTextDrawColor(playerid, TEXTDRAW_NOTESLIST[playerid][8], -1);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_NOTESLIST[playerid][8], 0);
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_NOTESLIST[playerid][8], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_NOTESLIST[playerid][8], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_NOTESLIST[playerid][8], 1);
-	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_NOTESLIST[playerid][8], true);	
+	PlayerTextDrawSetSelectable(playerid, TEXTDRAW_NOTESLIST[playerid][8], true);
 
 	TEXTDRAW_NOTESLIST[playerid][9] = CreatePlayerTextDraw(playerid, 579.999877, 239.322235, "ld_chat:thumbup");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_NOTESLIST[playerid][9], 6.000000, 8.000000);

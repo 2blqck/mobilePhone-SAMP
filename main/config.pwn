@@ -76,6 +76,7 @@ new usingPhone[MAX_PLAYERS] = 0,
 	playerNumber[MAX_PLAYERS] = 0,
 	playerCredit[MAX_PLAYERS] = 0,
 	playerOccupied[MAX_PLAYERS] = 0, // KADA JE U CALLU / SMS
+	tweetID = 1,
 	marketPickupID[sizeof(marketCoordinates)],
 
 	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19],

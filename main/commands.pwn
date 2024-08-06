@@ -62,7 +62,7 @@ CMD:test(playerid)
 
 CMD:notif(playerid)
 {
-	RestartNotesList(playerid); RestartCallList(playerid);
+	RestartNotesList(playerid); RestartCallList(playerid); RestartTwitter(playerid);
 
 	playerOccupied[playerid] = 1;
 	return 1;
