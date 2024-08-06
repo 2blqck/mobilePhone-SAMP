@@ -97,6 +97,14 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         UseMobile(playerid, NOAPPS, SHOW);
         SendClientMessage(playerid, -1, "O");
     }
+
+    if(playertextid == TEXTDRAW_TWITTER[playerid][5])
+    {
+    	if(gettime() < twitterDelay) return SendClientMessage(playerid, -1, "Mora proci 30 sekundi izmedu objavljivanje tweetova.");
+    	writingTweet[playerid] = 1;
+    	SendClientMessage(playerid, -1, " ");
+    	SendClientMessage(playerid, -1, "Napisite tweet u chat koji zelite objaviti - (tweet_exit ukoliko zelite prekinuti radnju)");
+    }
     return 1;
 }
 
@@ -164,7 +172,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
     return 1;
 }
 
-public OnPlayerText(playerid, text[])
+hook OnPlayerText(playerid, text[])
 {
 	if(playerOccupied[playerid] == 1)
 	{
@@ -174,29 +182,42 @@ public OnPlayerText(playerid, text[])
 
 	// twitter
 
-	// provjera da li je u tweet modu, koju se daje kada stisne tweet textdraw
-	for(new i = 0; i < strlen(text); i++)
+	if(writingTweet[playerid] == 1)
 	{
-		if(text[i] == ' ')
-		text[i] = '_' ;
+
+		if(strfind(text, "tweet_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja tweeta."), writingTweet[playerid] = 0;
+
+		for(new i = 0; i < strlen(text); i++)
+		{
+			if(text[i] == ' ')
+			text[i] = '_' ;
+		}
+
+		new string[92];
+		format(string, 92, "%s", text);
+
+		if(strlen(string) > 21) strins(string, "~n~", 21, 92);
+		if(strlen(string) > 45) strins(string, "~n~", 45, 92);
+		if(strlen(string) > 68) strins(string, "~n~", 68, 92);
+
+		new foo[160];
+	    mysql_format(db_handle, foo, sizeof(foo), 
+	    			"UPDATE `twitter` SET `TweetString` = '%s' WHERE `TweetID` = %d", 
+	    			string, tweetID);
+	    mysql_tquery(db_handle, foo);
+
+	    PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);
+
+	    tweetID++;
+	    if(tweetID > 3) tweetID = 1;
+
+	    SendClientMessage(playerid, -1, " ");
+    	SendClientMessage(playerid, -1, "Zavrsili ste sa pisanjem tweeta.");
+
+	    writingTweet[playerid] = 0;
+	    twitterDelay = gettime() + 30;
+
+	    return 0;
 	}
-
-	new string[92];
-	format(string, 92, "%s", text);
-
-	if(strlen(string) > 21) strins(string, "~n~", 21, 92);
-	if(strlen(string) > 45) strins(string, "~n~", 45, 92);
-	if(strlen(string) > 68) strins(string, "~n~", 68, 92);
-
-	new foo[160];
-    mysql_format(db_handle, foo, sizeof(foo), 
-    			"UPDATE `twitter` SET `TweetString` = '%s' WHERE `TweetID` = %d", 
-    			string, tweetID);
-    mysql_tquery(db_handle, foo);
-
-    PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);
-
-    tweetID++;
-    if(tweetID > 3) tweetID = 1;
 	return 1;
 }

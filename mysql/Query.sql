@@ -1,4 +1,0 @@
-CREATE TABLE users (
-    Username VARCHAR(32) NOT NULL,
-    HasPhone BOOLEAN DEFAULT FALSE
-);
