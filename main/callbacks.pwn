@@ -190,12 +190,13 @@ public OnPlayerText(playerid, text[])
 
 	new foo[160];
     mysql_format(db_handle, foo, sizeof(foo), 
-    			"INSERT INTO `twitter` (`TweetID`, `TweetString`) VALUES (%d, '%s')", 
-    			tweetID, string);
+    			"UPDATE `twitter` SET `TweetString` = '%s' WHERE `TweetID` = %d", 
+    			string, tweetID);
     mysql_tquery(db_handle, foo);
 
+    PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);
+
+    tweetID++;
     if(tweetID > 3) tweetID = 1;
-    else tweetID++;
-	PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);
 	return 1;
 }
