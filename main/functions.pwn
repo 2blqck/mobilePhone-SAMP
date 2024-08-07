@@ -400,6 +400,82 @@ public UpdateTimeDate(playerid, type)
 	return 1;
 }
 
+forward ChangeBackground(playerid, background);
+public ChangeBackground(playerid, background)
+{
+	switch(background)
+	{
+		case 0:
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][0], "LD_SHTR:bstars"),
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][1], "LD_SHTR:bstars");
+    	case 1:
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][0], "LD_OTB2:backbet"),
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][1], "LD_OTB2:backbet");
+    	case 2:
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][0], "LD_GRAV:sky"),
+    		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][1], "LD_GRAV:sky");
+	}
+	return 1;
+}
+
+forward ChangeFrame(playerid, frame);
+public ChangeFrame(playerid, frame)
+{
+	switch(frame)
+	{
+		case 0:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], -1);
+			}
+		}
+		case 1:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0x007BFFFF);
+			}
+		}
+		case 2:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0xFF0000FF);
+			}
+		}
+		case 3:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0x0FF702FF);
+			}
+		}
+		case 4:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0xF8CE02FF);
+			}
+		}
+		case 5:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0xAA02F7FF);
+			}
+		}
+		case 6:
+		{
+			for(new i = 4; i < 12; i++)
+			{
+				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0xF702BEFF);
+			}
+		}
+
+	}
+	return 1;
+}
 //
 
 forward SQLLoadUser(playerid);
@@ -497,22 +573,4 @@ GetName(playerid)
 	new PlayerName[MAX_PLAYER_NAME]; 
 	GetPlayerName(playerid, PlayerName, sizeof(PlayerName));
 	return PlayerName;
-}
-
-RestartNotesList(playerid)
-{
-	for(new i = 0; i < 7; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_NOTESLIST[playerid][i], EMPTY_NAME);
-	return 1;
-}
-
-RestartCallList(playerid)
-{
-	for(new i = 10; i < 19; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_CALLLIST[playerid][i], EMPTY_NAME);
-	return 1;
-}
-
-RestartTwitter(playerid)
-{
-	for(new i = 10; i < 13; i++) PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][i], EMPTY_NAME);
-	return 1;
 }

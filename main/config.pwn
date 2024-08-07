@@ -50,6 +50,7 @@
 #define EXITING 		2
 
 #define MARKET_DIALOG 16261
+#define SETTINGS_DIALOG 17214
 
 #define BANK_PAYMENT 	1
 #define CALL_RECEIVED	2

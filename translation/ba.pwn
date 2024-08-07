@@ -37,7 +37,7 @@
 #define FORCE_BUY "Morate ga kupiti u marketu."
 #define HAS_PHONE_TEXT "Vi vec imate telefon."
 #define MARKET_ERROR "Vi niste u marketu."
-#define EMPTY_NAME "Prazno"
 #define CREDIT "Kredit"
 #define CREDIT_MARKET "Sada imate $%d kredita na vasem telefonu."
 #define CREDIT_MAX "Dostigli ste maximalni iznos."
+#define TWEET_ERROR "Pisete tweet, prvo morate zavrsiti ili odustati."

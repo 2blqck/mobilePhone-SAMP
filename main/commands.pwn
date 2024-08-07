@@ -12,6 +12,7 @@
 CMD:mobile(playerid)
 {
 	if(hasPhone[playerid] == 0) return SendPlayerNotification(playerid, -1, NO_PHONE);
+	if(writingTweet[playerid] == 1) return SendClientMessage(playerid, -1, TWEET_ERROR);
 
 	if(usingPhone[playerid] == 0)
 	{
@@ -38,11 +39,25 @@ alias:mobile("mobitel")
 CMD:shop(playerid)
 {
 	if(!IsPlayerNearMarket(playerid)) return SendPlayerNotification(playerid, -1, NOT_IN_MARKET);
+	if(writingTweet[playerid] == 1) return SendClientMessage(playerid, -1, TWEET_ERROR);
+
 	OnPlayerEnterShop(playerid, BUYING);
 	return 1;
 }
 
 alias:shop("market")
+
+CMD:mobilesettings(playerid)
+{
+	if(hasPhone[playerid] == 0) return SendPlayerNotification(playerid, -1, NO_PHONE);
+	if(writingTweet[playerid] == 1) return SendClientMessage(playerid, -1, TWEET_ERROR);
+	if(usingPhone[playerid] == 0) return SendClientMessage(playerid, -1, "Morate imati upaljen telefon.");
+	if(playerOccupied[playerid] == 1) return SendClientMessage(playerid, -1, "Morate biti van poziva.");
+
+	ShowPlayerDialog(playerid, SETTINGS_DIALOG, DIALOG_STYLE_LIST, "Settings", "Pozadina - Zvjezdano nebo\nPozadina - 2-Color\nPozadina - Nebo\n\
+																				Okvir - Default\nOkvir - Plavi\nOkvir - Crveni\nOkvir - Zeleni\nOkvir - Zuti\nOkvir - Ljubicasti\nOkvir - Rozi", "Odaberi", CANCEL);
+	return 1;
+}
 
 //
 #if DEBUG == 1
@@ -62,8 +77,6 @@ CMD:test(playerid)
 
 CMD:notif(playerid)
 {
-	RestartNotesList(playerid); RestartCallList(playerid); RestartTwitter(playerid);
-
 	playerOccupied[playerid] = 1;
 	return 1;
 }

@@ -102,6 +102,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
     	if(gettime() < twitterDelay) return SendClientMessage(playerid, -1, "Mora proci 30 sekundi izmedu objavljivanje tweetova.");
     	writingTweet[playerid] = 1;
+    	CancelSelectTextDraw(playerid);
+
     	SendClientMessage(playerid, -1, " ");
     	SendClientMessage(playerid, -1, "Napisite tweet u chat koji zelite objaviti - (tweet_exit ukoliko zelite prekinuti radnju)");
     }
@@ -168,6 +170,40 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             }
             else OnPlayerEnterShop(playerid, EXITING);
         }
+
+        case SETTINGS_DIALOG:
+        {
+        	if(response)
+        	{
+        		switch(listitem)
+        		{
+        			case 0:
+        				ChangeBackground(playerid, 0);
+        			case 1:
+        				ChangeBackground(playerid, 1);
+        			case 2:
+        				ChangeBackground(playerid, 2);
+        			case 3:
+        				ChangeFrame(playerid, 0);
+        			case 4:
+        				ChangeFrame(playerid, 1);
+        			case 5:
+        				ChangeFrame(playerid, 2);
+        			case 6:
+        				ChangeFrame(playerid, 3);
+        			case 7:
+        				ChangeFrame(playerid, 4);
+        			case 8:
+        				ChangeFrame(playerid, 5);
+        			case 9:
+        				ChangeFrame(playerid, 6);
+        		}
+        		HidePhone(playerid);
+		        UseMobile(playerid, HOME, SHOW);
+		        UseMobile(playerid, NOAPPS, SHOW);
+        		SelectTextDraw(playerid, SELECTION_COLOR);
+        	}
+        }
     }
     return 1;
 }
@@ -176,11 +212,10 @@ hook OnPlayerText(playerid, text[])
 {
 	if(playerOccupied[playerid] == 1)
 	{
-		if(strfind(text, "sms_exit", true) != -1) SendClientMessage(playerid, -1, "Test"); // zavrsetak sms		
+		if(strfind(text, "sms_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja SMSa"), playerOccupied[playerid] = 0; // zavrsetak sms		
+
+		return 0;
 	}
-
-
-	// twitter
 
 	if(writingTweet[playerid] == 1)
 	{
@@ -216,6 +251,8 @@ hook OnPlayerText(playerid, text[])
 
 	    writingTweet[playerid] = 0;
 	    twitterDelay = gettime() + 30;
+
+	    SelectTextDraw(playerid, SELECTION_COLOR);
 
 	    return 0;
 	}
