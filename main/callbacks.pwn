@@ -24,7 +24,7 @@ public OnPlayerConnect(playerid)
     new foo[80];
     mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
     mysql_tquery(db_handle, foo, "SQLLoadUser", "d", playerid);
-
+    mysql_tquery(db_handle, foo, "SQLLoadPhone", "d", playerid);
 	return 1;
 }
 
@@ -134,7 +134,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
                         new foo[128];
 				        mysql_format(db_handle, foo, sizeof(foo), 
-				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`) VALUES ('%s', %d, %d, %d)", 
+				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`, `Frame`, `Background`) VALUES ('%s', %d, %d, %d, 0, 0)", 
 				        			GetName(playerid), hasPhone[playerid], playerNumber[playerid], playerCredit[playerid]);
 				        mysql_tquery(db_handle, foo);
                     }

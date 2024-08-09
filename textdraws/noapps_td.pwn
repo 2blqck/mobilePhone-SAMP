@@ -191,5 +191,9 @@ public CreatePhoneTD(playerid)
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_DEFAULT[playerid][18], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_DEFAULT[playerid][18], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_DEFAULT[playerid][18], 0);
+
+	new foo[80];
+	mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
+	mysql_tquery(db_handle, foo, "SQLLoadPhone", "d", playerid);
 	return 1;
 }

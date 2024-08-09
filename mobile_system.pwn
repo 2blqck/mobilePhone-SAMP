@@ -40,5 +40,3 @@ Requirements:
 
 // Main
 #include "main/loader.pwn"
-
-// Twitter - Poruke preko notifikacija

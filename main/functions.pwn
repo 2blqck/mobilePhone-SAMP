@@ -216,6 +216,10 @@ public ShowNotification(playerid, status)
 forward HidePhone(playerid);
 public HidePhone(playerid)
 {
+	new foo[80];
+    mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
+    mysql_tquery(db_handle, foo, "SQLLoadPhone", "d", playerid);
+	
 	ShowBank(playerid, HIDE);
 	ShowCall(playerid, CALLLIST, HIDE);
 	ShowCall(playerid, CALLING, HIDE);
@@ -415,6 +419,12 @@ public ChangeBackground(playerid, background)
     		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][0], "LD_GRAV:sky"),
     		PlayerTextDrawSetString(playerid, TEXTDRAW_DEFAULT[playerid][1], "LD_GRAV:sky");
 	}
+
+	new foo[80];
+    mysql_format(db_handle, foo, sizeof(foo), 
+    			"UPDATE `users` SET `Background` = %d WHERE `Username` = '%s'", 
+    			background, GetName(playerid));
+    mysql_tquery(db_handle, foo);
 	return 1;
 }
 
@@ -472,8 +482,13 @@ public ChangeFrame(playerid, frame)
 				PlayerTextDrawColor(playerid, TEXTDRAW_DEFAULT[playerid][i], 0xF702BEFF);
 			}
 		}
-
 	}
+
+	new foo[80];
+    mysql_format(db_handle, foo, sizeof(foo), 
+    			"UPDATE `users` SET `Frame` = %d  WHERE `Username` = '%s'", 
+    			frame, GetName(playerid));
+    mysql_tquery(db_handle, foo);
 	return 1;
 }
 //
@@ -506,6 +521,22 @@ public SQLLoadTwitter(playerid)
         	
             PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweet], string);
         }
+	}
+	return 1;
+}
+
+forward SQLLoadPhone(playerid);
+public SQLLoadPhone(playerid)
+{
+	new rows = cache_num_rows(), frameID[MAX_PLAYERS], backgroundID[MAX_PLAYERS];
+
+	if(rows)
+	{
+		cache_get_value_name_int(0, "Frame", frameID[playerid]);
+		cache_get_value_name_int(0, "Background", backgroundID[playerid]);
+
+		ChangeBackground(playerid, backgroundID[playerid]);
+		ChangeFrame(playerid, frameID[playerid]);
 	}
 	return 1;
 }
