@@ -11,8 +11,7 @@
 
 /* 
 Requirements:
-	https://github.com/YSI-Coding/y_hooks
-	https://github.com/YSI-Coding/y_timers
+	https://github.com/pawn-lang/YSI-Includes
 	https://github.com/pBlueG/SA-MP-MySQL
 	https://github.com/katursis/Pawn.CMD
 */

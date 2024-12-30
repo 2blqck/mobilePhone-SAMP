@@ -12,8 +12,8 @@
 // MySQL
 
 #define MYSQL_HOST 		"localhost" 
-#define MYSQL_USER 		"mobilephone_db" 
-#define MYSQL_PASS 		"mobilephone_db" 
+#define MYSQL_USER 		"root" 
+#define MYSQL_PASS 		"" 
 #define MYSQL_DB   		"mobilephone_db" 
 
 // Translation
