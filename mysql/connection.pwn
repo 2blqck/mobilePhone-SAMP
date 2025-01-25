@@ -9,8 +9,6 @@
                mysql/connection.pwn
 */
 
-#include < YSI_Coding\y_hooks >
-
 new MySQL:db_handle;
 
 hook OnFilterScriptInit()

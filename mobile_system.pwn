@@ -19,8 +19,10 @@ Requirements:
 #include < a_samp >
 #include < a_mysql >
 
-#include < YSI_Coding\y_hooks >
-#include < YSI_Coding\y_timers >
+//#include < YSI_Coding\y_hooks >
+//#include < YSI_Coding\y_timers >
+#include < ysi\YSI_Coding\y_hooks >
+#include < ysi\YSI_Coding\y_timers >
 
 #define FILTERSCRIPT
 #include < Pawn.CMD >

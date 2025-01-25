@@ -132,7 +132,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                         SendPlayerNotification(playerid, -1, READY_TO_USE);
                         CreateTextDraws(playerid);
 
-                        new foo[128];
+                        new foo[256];
 				        mysql_format(db_handle, foo, sizeof(foo), 
 				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`, `Frame`, `Background`) VALUES ('%s', %d, %d, %d, 0, 0)", 
 				        			GetName(playerid), hasPhone[playerid], playerNumber[playerid], playerCredit[playerid]);
@@ -157,7 +157,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
                     			playerCredit[playerid] += 100;
                     	}
 
-                    	new foo[80];
+                    	new foo[128];
 				        mysql_format(db_handle, foo, sizeof(foo), 
 				        			"UPDATE `users` SET `Credit` = %d WHERE `Username` = '%s'", 
 				        			playerCredit[playerid], GetName(playerid));
@@ -212,7 +212,7 @@ hook OnPlayerText(playerid, text[])
 {
 	if(playerOccupied[playerid] == 1)
 	{
-		if(strfind(text, "sms_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja SMSa"), playerOccupied[playerid] = 0; // zavrsetak sms		
+		if(strfind(text, "sms_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja SMSa"), playerOccupied[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
 
 		return 0;
 	}
@@ -220,7 +220,9 @@ hook OnPlayerText(playerid, text[])
 	if(writingTweet[playerid] == 1)
 	{
 
-		if(strfind(text, "tweet_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja tweeta."), writingTweet[playerid] = 0;
+		if(strfind(text, "tweet_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja tweeta."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
+
+		if(strlen(text) > 92) return SendClientMessage(playerid, -1, "Tekst je predug, pokusajte ponovo."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
 
 		for(new i = 0; i < strlen(text); i++)
 		{
