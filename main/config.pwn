@@ -1,12 +1,12 @@
 /*
-      __                 __    __           __  
-     / /__      ______  / /_  / /___ ______/ /__
-    / __/ | /| / / __ \/ __ \/ / __ `/ ___/ //_/
-   / /_ | |/ |/ / /_/ / /_/ / / /_/ / /__/ ,<   
-   \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
-                                /_/             
+	                  __ __   _       _ 
+	                 /_ /_ | | |     | |
+	 __   _____  _ __ | || | | | ___ | |
+	 \ \ / / _ \| '_ \| || | | |/ _ \| |
+	  \ V / (_) | | | | || |_| | (_) | |
+	   \_/ \___/|_| |_|_||_(_)_|\___/|_|
 
-               main/config.pwn
+			main/config.pwn
 */
 
 // MySQL
@@ -76,7 +76,7 @@ new usingPhone[MAX_PLAYERS] = 0,
 	hasPhone[MAX_PLAYERS] = 0,
 	playerNumber[MAX_PLAYERS] = 0,
 	playerCredit[MAX_PLAYERS] = 0,
-	playerOccupied[MAX_PLAYERS] = 0, // KADA JE U CALLU / SMS
+	playerOccupied[MAX_PLAYERS] = 0, // U Callu/Salje SMS
 	writingTweet[MAX_PLAYERS] = 0,
 	twitterDelay = 0,
 	tweetID = 1,

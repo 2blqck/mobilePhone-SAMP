@@ -1,12 +1,12 @@
 /*
-      __                 __    __           __  
-     / /__      ______  / /_  / /___ ______/ /__
-    / __/ | /| / / __ \/ __ \/ / __ `/ ___/ //_/
-   / /_ | |/ |/ / /_/ / /_/ / / /_/ / /__/ ,<   
-   \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
-                                /_/             
+	                  __ __   _       _ 
+	                 /_ /_ | | |     | |
+	 __   _____  _ __ | || | | | ___ | |
+	 \ \ / / _ \| '_ \| || | | |/ _ \| |
+	  \ V / (_) | | | | || |_| | (_) | |
+	   \_/ \___/|_| |_|_||_(_)_|\___/|_|
 
-               textdraws/noapps_td.pwn
+			textdraws/noapps_td.pwn
 */
 
 forward CreatePhoneTD(playerid);
@@ -123,7 +123,7 @@ public CreatePhoneTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_DEFAULT[playerid][11], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_DEFAULT[playerid][11], 0);
 
-	TEXTDRAW_DEFAULT[playerid][12] = CreatePlayerTextDraw(playerid, 530.333190, 373.577728, "III");
+	TEXTDRAW_DEFAULT[playerid][12] = CreatePlayerTextDraw(playerid, 530.333190, 373.577728, "X");
 	PlayerTextDrawLetterSize(playerid, TEXTDRAW_DEFAULT[playerid][12], 0.133664, 1.421627);
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_DEFAULT[playerid][12], 535.000000, 373.577728);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_DEFAULT[playerid][12], 1);

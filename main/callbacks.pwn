@@ -1,12 +1,12 @@
 /*
-      __                 __    __           __  
-     / /__      ______  / /_  / /___ ______/ /__
-    / __/ | /| / / __ \/ __ \/ / __ `/ ___/ //_/
-   / /_ | |/ |/ / /_/ / /_/ / / /_/ / /__/ ,<   
-   \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
-                                /_/             
+	                  __ __   _       _ 
+	                 /_ /_ | | |     | |
+	 __   _____  _ __ | || | | | ___ | |
+	 \ \ / / _ \| '_ \| || | | |/ _ \| |
+	  \ V / (_) | | | | || |_| | (_) | |
+	   \_/ \___/|_| |_|_||_(_)_|\___/|_|
 
-               main/callbacks.pwn
+			main/callbacks.pwn
 */
 
 public OnFilterScriptInit()
@@ -25,79 +25,74 @@ public OnPlayerConnect(playerid)
     mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
     mysql_tquery(db_handle, foo, "SQLLoadUser", "d", playerid);
     mysql_tquery(db_handle, foo, "SQLLoadPhone", "d", playerid);
+
+    CreateNotificationTD(playerid);
 	return 1;
-}
-
-hook OnPlayerSpawn(playerid)
-{
-	if(hasPhone[playerid] == 1) CreateTextDraws(playerid);
-
-	CreateNotificationTD(playerid);
-    return 1;
 }
 
 public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 {
+	// Notes
     if(playertextid == TEXTDRAW_HOME[playerid][0]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, NOTES, SHOW, NOTESLISTTD);
-        SendClientMessage(playerid, -1, "?");
     }
+    // SMS
     if(playertextid == TEXTDRAW_HOME[playerid][1]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, BANK, SHOW);
-        SendClientMessage(playerid, -1, "banka");
     }
+    // SMS
     if(playertextid == TEXTDRAW_HOME[playerid][2]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, SMS, SHOW);
-        SendClientMessage(playerid, -1, "sms");
     }
+    // Dial
     if(playertextid == TEXTDRAW_HOME[playerid][3]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, CALL, SHOW, CALLDIAL);
-        SendClientMessage(playerid, -1, "call");
     }
+    // Clock
     if(playertextid == TEXTDRAW_HOME[playerid][4]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, TIME, SHOW);
-        SendClientMessage(playerid, -1, "Sat");
     }
+    // Twitter
     if(playertextid == TEXTDRAW_HOME[playerid][5]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, TWITTER, SHOW);
-        SendClientMessage(playerid, -1, "Twitter");
     }
 
+    // Putting away phone
     if(playertextid == TEXTDRAW_DEFAULT[playerid][12]) 
     {
         HidePhone(playerid);
         CancelSelectTextDraw(playerid);
-        SendClientMessage(playerid, -1, "III");
         UseMobile(playerid, NOAPPS, HIDE);
         usingPhone[playerid] = false;
     }
+    // One step back
     if(playertextid == TEXTDRAW_DEFAULT[playerid][13]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, HOME, SHOW);
         UseMobile(playerid, NOAPPS, SHOW);
-        SendClientMessage(playerid, -1, "<");
     }
+    // Back to homepage
     if(playertextid == TEXTDRAW_DEFAULT[playerid][14]) 
     {
         HidePhone(playerid);
         UseMobile(playerid, HOME, SHOW);
         UseMobile(playerid, NOAPPS, SHOW);
-        SendClientMessage(playerid, -1, "O");
     }
 
+    // Tweet button
     if(playertextid == TEXTDRAW_TWITTER[playerid][5])
     {
     	if(gettime() < twitterDelay) return SendClientMessage(playerid, -1, "Mora proci 30 sekundi izmedu objavljivanje tweetova.");
@@ -139,11 +134,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				        mysql_tquery(db_handle, foo);
                     }
 
-                    case 1, 2, 3, 4:
+                    case 1..4:
                     {
 
                     	if(hasPhone[playerid] == 0) return SendPlayerNotification(playerid, -1, NO_PHONE);
-                    	if(playerCredit[playerid] > 999999) return SendClientMessage(playerid, -1, CREDIT_MAX);
+                    	if(playerCredit[playerid] > 1000) return SendClientMessage(playerid, -1, CREDIT_MAX);
 
                     	switch(listitem)
                     	{
@@ -177,27 +172,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
         	{
         		switch(listitem)
         		{
-        			case 0:
-        				ChangeBackground(playerid, 0);
-        			case 1:
-        				ChangeBackground(playerid, 1);
-        			case 2:
-        				ChangeBackground(playerid, 2);
-        			case 3:
-        				ChangeFrame(playerid, 0);
-        			case 4:
-        				ChangeFrame(playerid, 1);
-        			case 5:
-        				ChangeFrame(playerid, 2);
-        			case 6:
-        				ChangeFrame(playerid, 3);
-        			case 7:
-        				ChangeFrame(playerid, 4);
-        			case 8:
-        				ChangeFrame(playerid, 5);
-        			case 9:
-        				ChangeFrame(playerid, 6);
+        			case 0..2:
+        				ChangeBackground(playerid, listitem);
+        			case 3..9:
+        				ChangeFrame(playerid, listitem-3);
         		}
+
         		HidePhone(playerid);
 		        UseMobile(playerid, HOME, SHOW);
 		        UseMobile(playerid, NOAPPS, SHOW);
@@ -212,22 +192,25 @@ hook OnPlayerText(playerid, text[])
 {
 	if(playerOccupied[playerid] == 1)
 	{
-		if(strfind(text, "sms_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja SMSa"), playerOccupied[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
+		if(strfind(text, "sms_exit", true) != -1) 
+			return SendClientMessage(playerid, -1, "Odustali ste od pisanja SMSa"), playerOccupied[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
+
+		// Zavrsit
 
 		return 0;
 	}
 
 	if(writingTweet[playerid] == 1)
 	{
+		if(strfind(text, "tweet_exit", true) != -1) 
+			return SendClientMessage(playerid, -1, "Odustali ste od pisanja tweeta."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
 
-		if(strfind(text, "tweet_exit", true) != -1) return SendClientMessage(playerid, -1, "Odustali ste od pisanja tweeta."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
-
-		if(strlen(text) > 92) return SendClientMessage(playerid, -1, "Tekst je predug, pokusajte ponovo."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
+		if(strlen(text) > 92) 
+			return SendClientMessage(playerid, -1, "Tekst je predug, pokusajte ponovo."), writingTweet[playerid] = 0, SelectTextDraw(playerid, SELECTION_COLOR);
 
 		for(new i = 0; i < strlen(text); i++)
 		{
-			if(text[i] == ' ')
-			text[i] = '_' ;
+			if(text[i] == ' ') text[i] = '_';
 		}
 
 		new string[92];
@@ -255,7 +238,6 @@ hook OnPlayerText(playerid, text[])
 	    twitterDelay = gettime() + 30;
 
 	    SelectTextDraw(playerid, SELECTION_COLOR);
-
 	    return 0;
 	}
 	return 1;

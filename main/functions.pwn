@@ -1,12 +1,12 @@
 /*
-      __                 __    __           __  
-     / /__      ______  / /_  / /___ ______/ /__
-    / __/ | /| / / __ \/ __ \/ / __ `/ ___/ //_/
-   / /_ | |/ |/ / /_/ / /_/ / / /_/ / /__/ ,<   
-   \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
-                                /_/             
+	                  __ __   _       _ 
+	                 /_ /_ | | |     | |
+	 __   _____  _ __ | || | | | ___ | |
+	 \ \ / / _ \| '_ \| || | | |/ _ \| |
+	  \ V / (_) | | | | || |_| | (_) | |
+	   \_/ \___/|_| |_|_||_(_)_|\___/|_|
 
-               main/functions.pwn
+			main/functions.pwn
 */
 
 forward ShowCall(playerid, type, status);
@@ -238,22 +238,15 @@ forward CreateTextDraws(playerid);
 public CreateTextDraws(playerid)
 {
 	CreatePhoneTD(playerid);
-    //
     CreateBankTD(playerid);
-    //
     CreateCallDialTD(playerid);
     CreateCallListTD(playerid);
     CreateCallingTD(playerid);
-    //
     CreateHomescreenTD(playerid);
-    //
     CreateNotesTD(playerid);
     CreateNotesListTD(playerid);
-    //
     CreateSMSTD(playerid);
-    //
     CreateTimeTD(playerid);
-    //
     CreateTwitterTD(playerid);
 	return 1;
 }
@@ -503,6 +496,8 @@ public SQLLoadUser(playerid)
 		cache_get_value_name_int(0, "HasPhone", hasPhone[playerid]);
 		cache_get_value_name_int(0, "Number", playerNumber[playerid]);
 		cache_get_value_name_int(0, "Credit", playerCredit[playerid]);
+
+		if(hasPhone[playerid] == 1) CreateTextDraws(playerid);
 	}
 	return 1;
 }

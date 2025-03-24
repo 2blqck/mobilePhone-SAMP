@@ -1,12 +1,12 @@
 /*
-      __                 __    __           __  
-     / /__      ______  / /_  / /___ ______/ /__
-    / __/ | /| / / __ \/ __ \/ / __ `/ ___/ //_/
-   / /_ | |/ |/ / /_/ / /_/ / / /_/ / /__/ ,<   
-   \__/ |__/|__/\____/_.___/_/\__, /\___/_/|_|  
-                                /_/             
+	                  __ __   _       _ 
+	                 /_ /_ | | |     | |
+	 __   _____  _ __ | || | | | ___ | |
+	 \ \ / / _ \| '_ \| || | | |/ _ \| |
+	  \ V / (_) | | | | || |_| | (_) | |
+	   \_/ \___/|_| |_|_||_(_)_|\___/|_|
 
-               mobile_system.pwn
+			mobile_system.pwn
 */
 
 /* 
@@ -19,10 +19,10 @@ Requirements:
 #include < a_samp >
 #include < a_mysql >
 
-//#include < YSI_Coding\y_hooks >
-//#include < YSI_Coding\y_timers >
-#include < ysi\YSI_Coding\y_hooks >
-#include < ysi\YSI_Coding\y_timers >
+#include < YSI_Coding\y_hooks >
+#include < YSI_Coding\y_timers >
+//#include < ysi\YSI_Coding\y_hooks >
+//#include < ysi\YSI_Coding\y_timers >
 
 #define FILTERSCRIPT
 #include < Pawn.CMD >
