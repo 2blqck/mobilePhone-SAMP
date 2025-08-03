@@ -1,0 +1,36 @@
+Mobile phone system - modularno
+
+- mogucnost poziva
+- mogucnost primanja poruka
+- notifikacije
+- promjena boje pozadine
+- promjena boje okvira
+- mysql cuvanje za twitter, biljeske, lista notifikacija, pozive, poruke
+- kreiranje tdova tek kad kupi telefon / ukoliko vec ima
+- grafik da relativno radi - ako je plus, da prikazuje pri kraju rast, ako je minus da pokazje pad, ako je 0 da bude ravno
+- kupovina custom brojeva, projmena broja, dopune, punjenje
+
+- BILJESKE - CUVANJE
+			- LOADANJE
+			- BRISANJE
+			- KREIRANJE
+			- EDITOVANJE
+			- CITANJE
+
+- SMS - CUVANJE BROJEVA
+		- LOADANJE BROJEVA
+		- BRISANJE BROJEVA
+		- SLANJE SMS 
+		
+- CALL - CUVANJE BROJEVA
+		- LOADANJE BROJEVA
+		- BRISANJE BROJEVA
+		- DIAL
+		- CALLING
+		- POZIVANJE
+
+- BANKA - CUVANJE
+		- LOADANJE
+		- GRAFIK
+		- UPLATA, ISPLATA, STANJE RACUNA 
+
