@@ -82,7 +82,7 @@ new usingPhone[MAX_PLAYERS] = 0,
 	tweetID = 1,
 	marketPickupID[sizeof(marketCoordinates)],
 
-	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][19],
+	PlayerText:TEXTDRAW_BANK[MAX_PLAYERS][21],
 	PlayerText:TEXTDRAW_CALLDIAL[MAX_PLAYERS][22],
 	PlayerText:TEXTDRAW_CALLLIST[MAX_PLAYERS][29],
 	PlayerText:TEXTDRAW_CALLING[MAX_PLAYERS][5],

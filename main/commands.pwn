@@ -67,9 +67,9 @@ CMD:test(playerid)
 	switch(test_id)
     {
     	case 0:
-    		SetPlayerPos(playerid, 2284.8750, -1326.1179, 24.6223+5), test_id++;
+    		SetPlayerPos(playerid, 2284.8750, -1326.1179, 24.6223+5), test_id = 1;
     	case 1:
-    		SetPlayerPos(playerid, 1152.3308, -1657.2321, 13.9058+5), test_id++;
+    		SetPlayerPos(playerid, 1152.3308, -1657.2321, 13.9058+5), test_id = 2;
     	default:
     		SetPlayerPos(playerid, 1340.5618, -1318.0380, 14.0+5), test_id = 0;
     }
@@ -78,6 +78,24 @@ CMD:test(playerid)
 CMD:notif(playerid)
 {
 	playerOccupied[playerid] = 1;
+	return 1;
+}
+
+CMD:bank(playerid)
+{
+	switch(test_id)
+    {
+    	case 0: // Pad
+	    	PlayerTextDrawHide(playerid, TEXTDRAW_BANK[playerid][19]),
+			PlayerTextDrawHide(playerid, TEXTDRAW_BANK[playerid][20]),
+			PlayerTextDrawShow(playerid, TEXTDRAW_BANK[playerid][11]),
+			PlayerTextDrawShow(playerid, TEXTDRAW_BANK[playerid][14]), test_id = 1;
+		case 1: // Rast
+			PlayerTextDrawShow(playerid, TEXTDRAW_BANK[playerid][19]),
+			PlayerTextDrawShow(playerid, TEXTDRAW_BANK[playerid][20]),
+			PlayerTextDrawHide(playerid, TEXTDRAW_BANK[playerid][11]),
+			PlayerTextDrawHide(playerid, TEXTDRAW_BANK[playerid][14]), test_id = 0;
+	}
 	return 1;
 }
 #endif

@@ -51,7 +51,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][3], 1);
 
 	TEXTDRAW_BANK[playerid][4] = CreatePlayerTextDraw(playerid, 521.666625, 309.881530, "box");
-	PlayerTextDrawLetterSize(playerid, TEXTDRAW_BANK[playerid][4], 0.000000, 6.100000);
+	PlayerTextDrawLetterSize(playerid, TEXTDRAW_BANK[playerid][4], 0.000000, 6.099998);
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][4], 594.000000, 0.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][4], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][4], -1);
@@ -107,7 +107,7 @@ public CreateBankTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][9], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][9], 0);
 
-	TEXTDRAW_BANK[playerid][10] = CreatePlayerTextDraw(playerid, 576.333129, 350.377746, "ld_beat:chit");
+	TEXTDRAW_BANK[playerid][10] = CreatePlayerTextDraw(playerid, 573.299804, 327.477661, "ld_beat:chit");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][10], 7.000000, 8.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][10], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][10], 8388863);
@@ -116,10 +116,10 @@ public CreateBankTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][10], 4);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][10], 0);
 
-	TEXTDRAW_BANK[playerid][11] = CreatePlayerTextDraw(playerid, 584.999877, 318.436981, "ld_beat:chit");
+	TEXTDRAW_BANK[playerid][11] = CreatePlayerTextDraw(playerid, 580.266601, 340.692657, "ld_beat:chit"); // Pad
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][11], 7.000000, 8.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][11], 1);
-	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][11], 8388863);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][11], -16776961);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][11], 0);
 	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][11], 255);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][11], 4);
@@ -134,70 +134,91 @@ public CreateBankTD(playerid)
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][12], 2);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][12], 1);
 
-	TEXTDRAW_BANK[playerid][13] = CreatePlayerTextDraw(playerid, 567.333435, 334.200073, "");
+	TEXTDRAW_BANK[playerid][13] = CreatePlayerTextDraw(playerid, 565.367004, 323.069824, "");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][13], 16.000000, 26.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][13], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][13], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][13], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][13], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][13], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][13], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][13], 19445);
-	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][13], -90.000000, 0.000000, 45.000000, 1.000000);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][13], 0);
+	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][13], 180.000000, 45.000000, 0.000000, 1.000000);
 
-	TEXTDRAW_BANK[playerid][14] = CreatePlayerTextDraw(playerid, 575.733215, 317.663024, "");
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][14], 17.000000, 40.000000);
+	TEXTDRAW_BANK[playerid][14] = CreatePlayerTextDraw(playerid, 574.099853, 330.722290, ""); // Pad
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][14], 13.000000, 16.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][14], 1);
-	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][14], 8388863);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][14], -16776961);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][14], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][14], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][14], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][14], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][14], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][14], 19445);
-	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][14], -90.000000, 0.000000, -30.000000, 1.000000);
+	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][14], -90.000000, 0.000000, 30.000000, 1.000000);
 
-	TEXTDRAW_BANK[playerid][15] = CreatePlayerTextDraw(playerid, 538.366149, 324.729644, "");
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][15], 12.000000, 41.000000);
+	TEXTDRAW_BANK[playerid][15] = CreatePlayerTextDraw(playerid, 541.565368, 332.630126, "");
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][15], 6.000000, 26.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][15], 1);
-	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][15], 8388863);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][15], -16776961);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][15], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][15], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][15], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][15], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][15], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][15], 19445);
 	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][15], -90.000000, 0.000000, 76.000000, 1.000000);
 
-	TEXTDRAW_BANK[playerid][16] = CreatePlayerTextDraw(playerid, 559.399536, 330.007415, "");
-	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][16], 12.000000, 17.000000);
+	TEXTDRAW_BANK[playerid][16] = CreatePlayerTextDraw(playerid, 562.899169, 331.544738, "");
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][16], 6.000000, 16.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][16], 1);
-	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][16], 8388863);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][16], -16776961);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][16], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][16], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][16], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][16], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][16], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][16], 19445);
-	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][16], -90.000000, 0.000000, 76.000000, 1.000000);
+	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][16], -90.000000, 0.000000, -100.000000, 0.800000);
 
 	TEXTDRAW_BANK[playerid][17] = CreatePlayerTextDraw(playerid, 550.066223, 328.310791, "");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][17], 13.000000, 27.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][17], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][17], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][17], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][17], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][17], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][17], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][17], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][17], 19445);
 	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][17], -90.000000, 0.000000, -65.000000, 1.000000);
 
-	TEXTDRAW_BANK[playerid][18] = CreatePlayerTextDraw(playerid, 526.399658, 333.088562, "");
+	TEXTDRAW_BANK[playerid][18] = CreatePlayerTextDraw(playerid, 526.299682, 333.088562, "");
 	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][18], 16.000000, 27.000000);
 	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][18], 1);
 	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][18], 8388863);
 	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][18], 0);
-	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][18], 0);
 	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][18], 5);
 	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][18], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][18], 0);
 	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][18], 19445);
 	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][18], -90.000000, 0.000000, -65.000000, 1.000000);
+
+	// Rast
+	TEXTDRAW_BANK[playerid][19] = CreatePlayerTextDraw(playerid, 580.533264, 317.807312, "ld_beat:chit");
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][19], 7.000000, 8.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][19], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][19], 8388863);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][19], 0);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][19], 255);
+	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][19], 4);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][19], 0);
+
+	TEXTDRAW_BANK[playerid][20] = CreatePlayerTextDraw(playerid, 572.632934, 321.633636, "");
+	PlayerTextDrawTextSize(playerid, TEXTDRAW_BANK[playerid][20], 14.000000, 12.000000);
+	PlayerTextDrawAlignment(playerid, TEXTDRAW_BANK[playerid][20], 1);
+	PlayerTextDrawColor(playerid, TEXTDRAW_BANK[playerid][20], 8388863);
+	PlayerTextDrawSetShadow(playerid, TEXTDRAW_BANK[playerid][20], 0);
+	PlayerTextDrawFont(playerid, TEXTDRAW_BANK[playerid][20], 5);
+	PlayerTextDrawBackgroundColor(playerid, TEXTDRAW_BANK[playerid][20], 0);
+	PlayerTextDrawSetProportional(playerid, TEXTDRAW_BANK[playerid][20], 0);
+	PlayerTextDrawSetPreviewModel(playerid, TEXTDRAW_BANK[playerid][20], 19445);
+	PlayerTextDrawSetPreviewRot(playerid, TEXTDRAW_BANK[playerid][20], -90.000000, 0.000000, -30.000000, 0.800000);
 	return 1;
 }

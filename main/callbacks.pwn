@@ -22,7 +22,7 @@ public OnFilterScriptInit()
 public OnPlayerConnect(playerid)
 {
     new foo[80];
-    mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%s'", GetName(playerid));
+    mysql_format(db_handle, foo, sizeof(foo), "SELECT * FROM `users` WHERE `Username` = '%e'", GetName(playerid));
     mysql_tquery(db_handle, foo, "SQLLoadUser", "d", playerid);
     mysql_tquery(db_handle, foo, "SQLLoadPhone", "d", playerid);
 
@@ -129,7 +129,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
                         new foo[256];
 				        mysql_format(db_handle, foo, sizeof(foo), 
-				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`, `Frame`, `Background`) VALUES ('%s', %d, %d, %d, 0, 0)", 
+				        			"INSERT INTO `users` (`Username`, `HasPhone`, `Number`, `Credit`, `Frame`, `Background`) VALUES ('%e', %d, %d, %d, 0, 0)", 
 				        			GetName(playerid), hasPhone[playerid], playerNumber[playerid], playerCredit[playerid]);
 				        mysql_tquery(db_handle, foo);
                     }
@@ -154,7 +154,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
                     	new foo[128];
 				        mysql_format(db_handle, foo, sizeof(foo), 
-				        			"UPDATE `users` SET `Credit` = %d WHERE `Username` = '%s'", 
+				        			"UPDATE `users` SET `Credit` = %d WHERE `Username` = '%e'", 
 				        			playerCredit[playerid], GetName(playerid));
 				        mysql_tquery(db_handle, foo);
 
@@ -222,8 +222,8 @@ hook OnPlayerText(playerid, text[])
 
 		new foo[160];
 	    mysql_format(db_handle, foo, sizeof(foo), 
-	    			"UPDATE `twitter` SET `TweetString` = '%s' WHERE `TweetID` = %d", 
-	    			string, tweetID);
+	    			"UPDATE `twitter` SET `TweetString` = '%s', `User` = '%e', `Time` = NOW() WHERE `TweetID` = %d", 
+	    			string, GetName(playerid), tweetID);
 	    mysql_tquery(db_handle, foo);
 
 	    PlayerTextDrawSetString(playerid, TEXTDRAW_TWITTER[playerid][9+tweetID], string);

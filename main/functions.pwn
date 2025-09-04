@@ -33,7 +33,7 @@ public ShowBank(playerid, status)
 	{
 		case HIDE: // hides textdraws
 		{
-			for(new td = 0; td < 19; td++)
+			for(new td = 0; td < 21; td++)
 			{
 				PlayerTextDrawHide(playerid, TEXTDRAW_BANK[playerid][td]);
 			}
